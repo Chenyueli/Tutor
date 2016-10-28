@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width = device-width,initial-scale = 1">
+
+		<title>找家教，上小夏</title>
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				border: 0;
+			}
+			
+			.hidden {
+				display: none !important;
+			}
+			
+			.wrapper {
+				background: url("img/bg.jpg");
+				background-repeat: repeat-y;
+				background-size: 100%;
+				min-height: 800px;
+			}
+			
+			header {
+				position: absolute;
+				top:10px;left:0;
+				line-height: 50px;
+				background-color: #fff;
+			}
+			
+			header> h2 {
+				text-align: center;
+			}
+			
+			.individual {
+				position: absolute;
+				top: 10px;
+				right: 20px;
+			}
+			
+			nav {
+				display: flex;
+				/*justify-content: center;*/
+				/*border: 1px solid red;*/
+			}
+			
+			nav>div {
+				text-align: center;
+				flex: 1;
+				width: 50%;
+				/*border: 1px solid red;*/
+			}
+			
+			nav span {
+				display: inline-block;
+				line-height: 32px;
+				padding: 0 20px;
+				border-radius: 8px;
+				/*border: 1px solid red;*/
+			}
+			
+			.active {
+				background-color: #EBEBEB;
+			}
+			
+			//金牌教师
+			.main {
+				position: relative;
+				top:50px;right:100px;
+				border: 1px solid green;
+			}
+			
+			.teacher-Info {
+				width: 100%;
+				padding: 5px;
+				display: flex;
+				-webkit-flex-wrap: wrap;
+				border: 1px solid red;
+			}
+			
+			.teacher-Info>div {
+				flex: 1;
+				margin: 3px;
+				background-color: #fff;
+				display: inline-block;
+				/*width:30%;*/
+				/*border: 1px solid red;*/
+				/*margin:10px;padding:0;*/
+				text-align: center;
+			}
+			
+			.tutoring-Info {
+				background-color: #fff;
+				border: 1px solid red;
+				margin: 20px 10px;
+				min-height: 500px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<header>
+				<h2>小夏家教网</h2>
+				<div class="individual">个人中心</div>
+				<nav>
+					<div><span class="active">金牌教师</span></div>
+					<div><span>家教信息</span></div>
+				</nav>
+			</header>
+			<div class="main">
+				<section class="teacher-Info hidden ">
+					<div class="teacher">
+						<div><img src="img/teacher1.png"></div>
+						<p class="name">吴老师</p>
+						<p class="subject">擅长科目</p>
+						<p class="detail">课程收费等介绍</p>
+					</div>
+					<div>
+						<div><img src="img/teacher1.png"></div>
+						<p class="name">吴老师</p>
+						<p class="subject">擅长科目</p>
+						<p class="detail">课程收费等介绍</p>
+					</div>
+					<div>
+						<div><img src="img/teacher1.png"></div>
+						<p class="name">吴老师</p>
+						<p class="subject">擅长科目</p>
+						<p class="detail">课程收费等介绍</p>
+					</div>
+					<div>
+						<div><img src="img/teacher1.png"></div>
+						<p class="name">吴老师</p>
+						<p class="subject">擅长科目</p>
+						<p class="detail">课程收费等介绍</p>
+
+					</div>
+					<div>
+						<div><img src="img/teacher1.png"></div>
+						<p class="name">吴老师</p>
+						<p class="subject">擅长科目</p>
+						<p class="detail">课程收费等介绍</p>
+					</div>
+					<div>
+						<div><img src="img/teacher1.png"></div>
+						<p class="name">吴老师</p>
+						<p class="subject">擅长科目</p>
+						<p class="detail">课程收费等介绍</p>
+
+					</div>
+
+				</section>
+				<section class="tutoring-Info">
+					<table>
+						<tr>
+							<td>初三（男）</td>
+							<td>物理</td>
+							<td>思明区.莲前西路</td>
+							<td>10-18</td>
+							<td class="std-detail">>></td>
+						</tr>
+						<tr>
+							<td>初三（男）</td>
+							<td>物理</td>
+							<td>思明区.莲前西路</td>
+							<td>10-18</td>
+							<td>>></td>
+						</tr>
+						<tr>
+							<td>初三（男）</td>
+							<td>物理</td>
+							<td>思明区.莲前西路</td>
+							<td>10-18</td>
+							<td>>></td>
+						</tr>
+
+					</table>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+					<p>小明</p>
+
+					<p>小明</p>
+					<p>小明</p>
+
+				</section>
+			</div>
+		</div>
+		<script src="js/jquery-3.1.1.js"></script>
+		<script>
+			$(document).ready(function() {
+				//点开显示 家教详情
+				$(".tutoring-Info").on("click", function(e) {
+					if(e.target.classList.contains("std-detail")) {
+						console.log($(e.target).parent().html());
+					}
+
+				})
+
+			});
+		</script>
+	</body>
+
+</html>
