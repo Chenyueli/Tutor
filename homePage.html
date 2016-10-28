@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width = device-width,initial-scale = 1">
-
+		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<title>找家教，上小夏</title>
 		<style>
 			* {
@@ -26,19 +26,33 @@
 			
 			header {
 				position: absolute;
-				top:10px;left:0;
+				top:0;left:0;
+				width:100%;
 				line-height: 50px;
 				background-color: #fff;
+				border: 1px solid red;
+				
 			}
 			
 			header> h2 {
 				text-align: center;
 			}
 			
-			.individual {
+			.fa-user {
 				position: absolute;
-				top: 10px;
+				top: 5px;
 				right: 20px;
+			}
+			.individual{
+				position: absolute;
+				top:25px;
+				right:20px;
+				background-color:#458B74;
+				color:#fff;
+				width: 100px;
+				padding: 5px;
+				text-align: center;
+				line-height: 28px;
 			}
 			
 			nav {
@@ -51,12 +65,13 @@
 				text-align: center;
 				flex: 1;
 				width: 50%;
-				/*border: 1px solid red;*/
+				line-height: 35px;
+				border: 1px solid red;
 			}
 			
 			nav span {
 				display: inline-block;
-				line-height: 32px;
+
 				padding: 0 20px;
 				border-radius: 8px;
 				/*border: 1px solid red;*/
@@ -66,11 +81,11 @@
 				background-color: #EBEBEB;
 			}
 			
-			//金牌教师
+		
 			.main {
 				position: relative;
-				top:50px;right:100px;
-				border: 1px solid green;
+				top:85px;left:0;
+				border: 1px solid red;
 			}
 			
 			.teacher-Info {
@@ -105,10 +120,14 @@
 		<div class="wrapper">
 			<header>
 				<h2>小夏家教网</h2>
-				<div class="individual">个人中心</div>
+				<i class="fa fa-user" ></i>
+				<div class = "individual">
+					<p>个人中心</p>
+					<p>用户认证</p>
+				</div>
 				<nav>
-					<div><span class="active">金牌教师</span></div>
-					<div><span>家教信息</span></div>
+					<div><span class="show-teacher active">金牌教师</span></div>
+					<div><span class = "show-tutoring">家教信息</span></div>
 				</nav>
 			</header>
 			<div class="main">
@@ -216,6 +235,18 @@
 				$(".tutoring-Info").on("click", function(e) {
 					if(e.target.classList.contains("std-detail")) {
 						console.log($(e.target).parent().html());
+					}
+
+				});
+				
+				$(document).click(function(e){
+					var element = e.target;
+					if(element.nodeName.toLocaleLowerCase() === "i"){
+						$(".individual").toggleClass("hidden");
+					}else if(element.nodeName.toLocaleLowerCase() === "nav"){
+						
+						
+						
 					}
 
 				})
