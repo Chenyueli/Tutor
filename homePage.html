@@ -33,15 +33,21 @@
 				border: 1px solid red;
 				
 			}
-			
+			.go-back{
+				position: absolute;
+				left:5px;
+				right:10px;
+			}
 			header> h2 {
 				text-align: center;
 			}
 			
 			.fa-user {
 				position: absolute;
-				top: 5px;
+				top: 10px;
 				right: 20px;
+				color:#82cfc7;
+				font-size:24px;
 			}
 			.individual{
 				position: absolute;
@@ -61,23 +67,25 @@
 				/*border: 1px solid red;*/
 			}
 			
-			nav>div {
+			nav > a {
 				text-align: center;
 				flex: 1;
 				width: 50%;
 				line-height: 35px;
-				border: 1px solid red;
+				border: 1px solid yellow;
+				color : #000;
 			}
 			
 			nav span {
 				display: inline-block;
 
 				padding: 0 20px;
+				/*margin:0 100px;*/
 				border-radius: 8px;
-				/*border: 1px solid red;*/
+				/*border: 1px solid green;*/
 			}
 			
-			.active {
+			.active >span {
 				background-color: #EBEBEB;
 			}
 			
@@ -111,7 +119,7 @@
 				background-color: #fff;
 				border: 1px solid red;
 				margin: 20px 10px;
-				min-height: 500px;
+				/*min-height: 500px;*/
 			}
 		</style>
 	</head>
@@ -119,20 +127,24 @@
 	<body>
 		<div class="wrapper">
 			<header>
+				<p class = "go-back hidden" ><i class="fa fa-angle-left" aria-hidden="true"></i>  首页</p> 
 				<h2>小夏家教网</h2>
 				<i class="fa fa-user" ></i>
-				<div class = "individual">
+				<div class = "individual   hidden">
 					<p>个人中心</p>
 					<p>用户认证</p>
 				</div>
 				<nav>
-					<div><span class="show-teacher active">金牌教师</span></div>
-					<div><span class = "show-tutoring">家教信息</span></div>
+					<a href="#" class = "active show-teacher"><span>金牌教师</span></a>
+					<a href="#" class ="show-tutoring"><span>家教信息</span></a>
 				</nav>
 			</header>
 			<div class="main">
-				<section class="teacher-Info hidden ">
+				
+				<section class="teacher-Info">
 					<div class="teacher">
+				
+						
 						<div><img src="img/teacher1.png"></div>
 						<p class="name">吴老师</p>
 						<p class="subject">擅长科目</p>
@@ -172,80 +184,66 @@
 					</div>
 
 				</section>
-				<section class="tutoring-Info">
+				<section class="tutoring-Info hidden">
 					<table>
 						<tr>
 							<td>初三（男）</td>
 							<td>物理</td>
 							<td>思明区.莲前西路</td>
 							<td>10-18</td>
-							<td class="std-detail">>></td>
-						</tr>
-						<tr>
-							<td>初三（男）</td>
-							<td>物理</td>
-							<td>思明区.莲前西路</td>
-							<td>10-18</td>
-							<td>>></td>
-						</tr>
-						<tr>
-							<td>初三（男）</td>
-							<td>物理</td>
-							<td>思明区.莲前西路</td>
-							<td>10-18</td>
-							<td>>></td>
+							<td class="turtoring-detail">>></td>
 						</tr>
 
 					</table>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-					<p>小明</p>
-
-					<p>小明</p>
-					<p>小明</p>
-
+				</section>
+				
+				<section id = "turtoring-detail">
+					
+					
 				</section>
 			</div>
 		</div>
 		<script src="js/jquery-3.1.1.js"></script>
 		<script>
 			$(document).ready(function() {
-				//点开显示 家教详情
-				$(".tutoring-Info").on("click", function(e) {
-					if(e.target.classList.contains("std-detail")) {
-						console.log($(e.target).parent().html());
-					}
-
-				});
+				$teacherInfor = $(".teacher-Info").eq(0);
 				
 				$(document).click(function(e){
 					var element = e.target;
+					console.log(element);
 					if(element.nodeName.toLocaleLowerCase() === "i"){
 						$(".individual").toggleClass("hidden");
-					}else if(element.nodeName.toLocaleLowerCase() === "nav"){
+					}else{
+						if(!$(".individual").hasClass("hidden")){
+							$(".individual").addClass("hidden");
+						}
+						//switch techer/tutoring info panel
+//						console.log($(element).parents());
+						if($(element).parents().filter("nav").length > 0 ){
+							if(element.nodeName.toLocaleLowerCase() === "a"){
+								$(element).addClass("active").siblings().removeClass("active");
+
+							}else{
+								$(element).parent().addClass("active").siblings().removeClass("active");
+							}
+							$(".main > .hidden").removeClass("hidden").siblings().addClass("hidden");
+							return ;
+						}
+						//switch end
 						
+						//open tutoring information detail
+						if($(element).hasClass("turtoring-detail")){
+//							var data = {
+//								
+//							}
+//							$.get(url,data,success,json)
+						return;
+						}
 						
+						//open teacher information detail
+						if($(element).parents().hasClass("teacher-Info") || $(element).hasClass("teacher-Info")){
+							
+						}
 						
 					}
 
