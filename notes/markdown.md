@@ -11,17 +11,17 @@ Markdown语法种类少的一种书写格式。兼容HTML。
 </table>
 ###特殊字符自动转换
 
-在 HTML中实体形式的<span> < （区块引用 Blockquotes起始标签）和 & （HTML实体标签）</span>，转化成 <span>&lt; 和 &amp;</span> ----看源文档
+在 HTML中实体形式的<span> < （区块引用 Blockquotes起始标签）和 & （HTML实体标签）</span>，转化成 <span>`&lt`; 和 `&amp`;</span> 
 >http://images.google.com/images?num=30&q=larry+bird
 http://images.google.com/images?num=30&amp;q=larry+bird
 
-###区块嵌套
+###区块嵌套`>>`
 >
 >>区块嵌套
 >###嵌套标题
 >>嵌套内容
 
-###列表
+###列表 `1. 空一格`
 无序列表用星号、加号或是减号作为列表标记
 >* 星号
 + 加号
@@ -40,11 +40,12 @@ http://images.google.com/images?num=30&amp;q=larry+bird
     sit amet velit.
 
 2.  Suspendisse id sem consectetuer libero luctus adipiscing.
-
+###代码块`<pre>`
 ><pre>
 ><p>Here is an example of AppleScript
 在代码区块里面， & 、 < 和 > 会自动转成 HTML 实体
 
+`<html><head></head><body></body></html>`
 
 *   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
     Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
@@ -53,12 +54,10 @@ http://images.google.com/images?num=30&amp;q=larry+bird
     Suspendisse id sem consectetuer libero luctus adipiscing.
 
 
-###分隔线
+###分隔线`**** ---`
 ***
----
 This is [链接](http://example.com/ "Title") inline link.
 >试一下*强调*<em>强调</em>
 >再试一下 **强调** <strong>强调</strong>
 
-`<html><head></head><body></body></html>`
-<code>html</code>
+

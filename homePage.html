@@ -140,7 +140,6 @@
 				</nav>
 			</header>
 			<div class="main">
-				
 				<section class="teacher-Info">
 					<div class="teacher">
 				
@@ -196,10 +195,60 @@
 
 					</table>
 				</section>
+				<section id = "turtoring-detail" class = "hidden">
+					<div>
+						<div><span>基本信息</span><span>2016-10-21 17:32</span></div>
+						<div><p>ID</p><p>568136</p></div>
+						<div><p>学生性别</p><p>女</p></div>
+						<div><p>家长称呼</p><p>陈跃利</p></div>
+						<div><p>求教科目</p><p>天文</p></div>
+						<div><p>学院年级</p><p>二年级</p></div>
+						<div><p>授课地址</p><p>火星</p></div>
+						<div><p>上课时间安排</p><p>周一到周五晚上，每周5次，每次两小时</p></div>
+						<div><p>薪资待遇</p><p>5000元/小时</p></div>
+						<div><p>联系方式</p><p>18559024715</p></div>
+						<div><p>QQ</p><p>896671603</p></div>
+					</div>
+					
+					<div>
+						<div><span>其他信息</span></div>
+						<div><p>學員狀況</p><p>二年級女生，小孩子比较调皮，需要养成良好的学习习惯</p></div>
+						<div><p>教員要求</p><p>厦大理工科，经验丰富，有优秀的学习方法和良好的学习习惯，最好是大三的。</p></div>
+						<div><p>家长称呼</p><p>陈跃利</p></div>
+						<div><p>求教科目</p><p>天文</p></div>
+						<div><p>学院年级</p><p>二年级</p></div>
+						<div><p>授课地址</p><p>火星</p></div>
+						<div><p>上课时间安排</p><p>周一到周五晚上，每周5次，每次两小时</p></div>
+						<div><p>薪资待遇</p><p>5000元/小时</p></div>
+						<div><p>联系方式</p><p>18559024715</p></div>
+						<div><p>QQ</p><p>896671603</p></div>
+					</div>
+					
+				</section>
 				
-				<section id = "turtoring-detail">
-					
-					
+				<section id = "reservation-list" class = "hidden">
+					<p>编号：007</p>
+					<div>
+						<p>输入您预约这个教教的特别说明、或优势说明，不要超过200字。</p>
+						<p>您填写的预约说明只有学员（家长）和网站管理员可见，不对外公开。</p>
+						<textarea></textarea>
+					</div>
+				</section>
+				
+				<section id = "identity" class = "hidden">
+					<p>温馨提示：申请认证的姓名必须与实名认证的姓名一致，一经认证无法修改</p>
+					<div>
+						<p>清按指定要求上传认证照片</p>
+						<div><p>+</p><p>身份证照片</p></div>
+						<div><p>+</p><p>学生证照片</p></div>
+						<div><p>+</p><p>其他说明</p></div>
+					</div>
+					<div>
+						<label>真实姓名：<input type = "text"></label>
+						<label>身份证号：<input type = "text"></label>
+						<label>学生证号：<input type = "text"></label>
+						<button>确认审核</button>
+					</div>
 				</section>
 			</div>
 		</div>
@@ -226,7 +275,7 @@
 							}else{
 								$(element).parent().addClass("active").siblings().removeClass("active");
 							}
-							$(".main > .hidden").removeClass("hidden").siblings().addClass("hidden");
+//							$(".main > .hidden").removeClass("hidden").siblings().addClass("hidden");
 							return ;
 						}
 						//switch end
