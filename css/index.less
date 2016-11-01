@@ -1,0 +1,258 @@
+@charset "utf-8";
+@bgColor: #fff;
+@headHeight: 50px;
+.tBorder {
+    border: 1px solid red;
+}
+.tb {
+    border: 1px solid red;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+}
+.hidden {
+    display: none !important;
+}
+.wrapper {
+    background: url("../img/bg.jpg");
+    background-attachment: fixed;
+//  .tb;
+    background-repeat: none;
+    background-size: 100% 667px;
+    min-height: 800px;
+//  overflow: hidden;
+}
+/*---------------------Header-----------------*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: @headHeight;
+    background-color: @bgColor;
+    z-index: 100;
+    & > .goBack {
+        position: fixed;
+        left: 5px;
+        right: 10px;
+    }
+    & > h2 {
+        text-align: center;
+    }
+}
+.fa-user {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    color: #82cfc7;
+    font-size: 24px;
+}
+.userPanel {
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    background-color: #458B74;
+    color: #fff;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 5px;
+}
+nav {
+    position: fixed;
+    top: @headHeight;
+    width: 100%;
+    height: 35px;
+    line-height: 30px;
+    background-color: @bgColor;
+    display: flex;
+//  z-index: 100;
+    padding-bottom: 10px;
+    & > a {
+        text-align: center;
+        flex: 1;
+        width: 50%;
+        color: #000; //      .tBorder;
+    }
+    span {
+        display: inline-block;
+        padding: 0 20px;
+        border-radius: 8px;
+    }
+}
+.active {
+    background-color: #EBEBEB;
+}
+/*---------------------content-wapper-----------------*/
+.content-wrapper {
+    position: relative;
+    top: 85px;
+    padding-top:5px;
+    .tb;
+    & > section {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+/*---------------------Information Panel-----------------*/
+#teacher-Info {
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    padding: 0 8px;
+    & > div {
+        width: 200px; //      height: 200px;
+        flex: 1;
+        margin: 3px;
+        background-color: @bgColor;
+        display: inline-block;
+        text-align: center; //      .tBorder;
+    }
+}
+#tutoring-Info {
+    background-color: @bgColor;
+}
+/*---------------------Tutoring Detail---------*/
+#tutoring-detail {
+    margin-top:0;
+    .infoTitle {
+        line-height: 30px;
+        padding:0 10px;
+//      margin-top: 5px;
+    }
+    .releaseTime {
+        float: right;
+        font-size: 14px;
+        
+    }
+}
+.infoItem {
+    background-color: @bgColor;
+    margin-bottom: 3px;
+    padding: 2px 0;
+    display: flex;
+    align-items: center;
+    /*垂直居中*/
+     :first-child {
+        color: gray;
+        flex: 1;
+        text-align: right;
+        margin-right: 16px;
+    }
+     :nth-child(2) {
+        flex: 2.5; //     
+    }
+}
+.reserve {
+    line-height: 32px;
+    font-size: 26px;
+    background-color: #406B5F;
+    border-radius: 5px;
+    display: block;
+    width: 80px; //  .tb;
+    margin: 20px auto 0;
+    position: relative;
+    bottom: 10px;
+}
+/*---------------------Resevation Form-----------------*/
+#reservation-Form {
+    .tb;
+    padding: 20px;
+    .tutorInfoID {}
+    & >.description {
+        height: 400px;
+        .tb;
+        background-color: @bgColor;
+        margin-top: 10px;
+        padding: 5px;
+        text-indent: 2em;
+    }
+    textarea {
+        border: 2px solid #78D9BD;
+        display: block;
+        width: 80%;
+        margin: 20px auto 0;
+        height: 250px;
+    }
+}
+/*---------------------Identity Authentication-----------------*/
+#identity-authentication {
+//  background-image: url("../img/bg_identify.jpg");
+}
+.img-info {
+    padding: 0 10px;
+    color: #fff;
+    //  .tb;
+}
+.flex-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+.add-img {
+    text-align: center;
+    font-size: 12px;
+    width: 80px;
+    height: 120px;
+    margin-top: 8px;
+    position: relative;
+    &>p {
+        background-color: @bgColor;
+        height: 80px;
+        margin-bottom: 10px;
+    }
+    //  .tb;
+}
+p[name = "remainder"] {
+    //  .tb;
+    background-color: #3E3554;
+    color: #fff;
+//  text-space-collapse: 1em;
+    padding: 5px 10px;
+    line-height: 25px;
+    position: relative;
+    top: -10px;
+    font-size: 14px;
+}
+.fa-plus {
+    color: #000000;
+    font-size: 20px;
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+.clap {
+    height: 10px;
+    background-color: @bgColor;
+}
+.text-info {
+    padding:0 10px;
+    &>label {
+        display: block;
+        width: 100%;
+        .tb;
+        margin: 10px auto;
+        background-color: @bgColor;
+        line-height: 30px;
+        font-size: 14px;
+        padding: 0 16px;
+        border-radius: 16px;
+    }
+    input{
+        line-height:30px ;
+    }
+    .tb;
+    button {
+        background-color: #642170;
+        color: #fff;
+        width:100%;
+        line-height: 30px;
+        font-size: 14px;
+        padding: 5px 16px;
+        border-radius: 12px;
+        display: block;
+        margin:10px auto 0 auto;
+    }
+}

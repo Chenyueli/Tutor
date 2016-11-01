@@ -1,0 +1,53 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+a {
+  font-size: 16px;
+  color: #fff;
+}
+.wrapper {
+  background: url("../img/bg.jpg");
+  background-size: 100%;
+  background-repeat: repeat-y;
+  min-height: 667px;
+  max-width: 667px;
+  margin: 0 auto;
+}
+.container {
+  text-align: center;
+}
+.logo {
+  margin: 30px auto 150px;
+  width: 100px;
+  height: 100px;
+  /*border: solid 1px red;*/
+  background: url("../img/teacher1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#mobile,
+#password {
+  height: 30px;
+  margin-top: 20px;
+  max-width: 300px;
+  border-radius: 15px;
+}
+.warning,
+.role,
+.logIn,
+.register {
+  /*font-size: 18px;*/
+  margin-top: 20px;
+}
+.logIn {
+  margin-right: 20px;
+}
+.logIn,
+.register {
+  background-color: #82cfc7;
+  border-radius: 5px;
+  width: 80px;
+}
