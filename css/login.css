@@ -4,16 +4,27 @@
   border: 0;
   box-sizing: border-box;
 }
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.tb {
+  border: 1px solid red;
+}
 a {
   font-size: 16px;
   color: #fff;
 }
-.wrapper {
+body {
   background: url("../img/bg.jpg");
+}
+.wrapper {
   background-size: 100%;
-  background-repeat: repeat-y;
-  min-height: 667px;
-  max-width: 667px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  max-height: 667px;
+  width: 100%;
   margin: 0 auto;
 }
 .container {

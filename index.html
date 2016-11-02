@@ -3,6 +3,15 @@
 
 	<head>
 		<meta charset="UTF-8">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<!--<script src="js/mobile-util.js" type="text/javascript" charset="utf-8"></script>-->
+
 		<meta name="viewport" content="width = device-width,initial-scale = 1">
 		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/index.css" rel="stylesheet">
@@ -15,20 +24,19 @@
 	<body>
 		<div class="wrapper">
 			<header>
-				<p class="goBack hidden">> 首页</p>
+				<p class="goBack hidden">> 返回</p>
 				<h2>厦大家教网</h2>
 				<i class="fa fa-user"></i>
-				<div class="userPanel">
-					<p class = "my-home">个人中心</p>
-					<p class = "go-identify">用户认证</p>
+				<div class="userPanel hidden">
+					<p class="my-home">个人中心</p>
+					<p class="go-identify">用户认证</p>
 				</div>
 			</header>
-
-			<nav class="">
+			<nav>
 				<a href="#"><span class="teacher-Info active">金牌教师</span></a>
 				<a href="#"><span class="tutoring-Info"> 家教信息</span></a>
 			</nav>
-			<div class="content-wrapper">
+			<div class="home-content">
 				<section id="teacher-Info" class="">
 					<div class="teacher">
 						<div><img src="img/teacher1.png"></div>
@@ -131,115 +139,158 @@
 						<p class="t-description">课程收费等介绍</p>
 					</div>
 				</section>
-				<section id="tutoring-Info" class="hidden">
-					<table>
-						<tr>
-							<td>初三（男）</td>
-							<td>物理</td>
-							<td>思明区.莲前西路</td>
-							<td>10-18</td>
-							<td class="tutoring-detail">>></td>
-						</tr>
 
-					</table>
-				</section>
-				<section id="tutoring-detail" class="hidden">
-					<section>
-						<div class="infoTitle"><span>基本信息</span><span class="releaseTime">2016-10-21 17:32</span></div>
-						<div class="infoItem">
-							<p>ID</p>
-							<p>568136</p>
+				<section id="tutoring-Info" class = "hidden">
+					<div class="in-tutoring-Info">
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
 						</div>
-						<div class="infoItem">
-							<p>学生性别</p>
-							<p>女</p>
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
 						</div>
-						<div class="infoItem">
-							<p>家长称呼</p>
-							<p>陈跃利</p>
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
 						</div>
-						<div class="infoItem">
-							<p>求教科目</p>
-							<p>数学</p>
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
 						</div>
-						<div class="infoItem">
-							<p>学院年级</p>
-							<p>二年级</p>
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
 						</div>
-						<div class="infoItem">
-							<p>授课地址</p>
-							<p>火星</p>
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
 						</div>
-						<div class="infoItem">
-							<p>上课时间安排</p>
-							<p>周一到周五晚上，每周5次，每次两小时</p>
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
 						</div>
-						<div class="infoItem">
-							<p>薪资待遇</p>
-							<p>5000元/小时</p>
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
 						</div>
-						<div class="infoItem">
-							<p>联系方式</p>
-							<p>18559024715</p>
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
 						</div>
-						<div class="infoItem">
-							<p>QQ</p>
-							<p>896671603</p>
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
 						</div>
-					</section>
-
-					<section>
-						<div class="infoTitle"><span>其他信息</span></div>
-						<div class="infoItem">
-							<p>學員狀況</p>
-							<p>二年級女生，小孩子比较调皮，需要养成良好的学习习惯</p>
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
 						</div>
-						<div class="infoItem">
-							<p>教員要求</p>
-							<p>厦大理工科，经验丰富，有优秀的学习方法和良好的学习习惯，最好是大三的。</p>
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
 						</div>
-					</section>
-					<button class="reserve">预约</button>
-				</section>
-
-				<section id="reservation-Form" class="hidden">
-					<p class="tutorInfoID">编号：007</p>
-					<div class="description">
-						<p>输入您预约这个教教的特别说明、或优势说明，不要超过200字。</p>
-						<p>您填写的预约说明只有学员（家长）和网站管理员可见，不对外公开。</p>
-						<textarea></textarea>
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
+						</div>
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
+						</div>
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
+						</div>
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
+						</div>
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
+						</div>
+						<div class="tutor-item">
+							<p name="grade">初三</p>
+							<p name="subject">物理</p>
+							<p name="sexuality">男</p>
+							<p name="pubDate">10-18</p>
+							<p name="address">思明区.莲前西路</p>
+							<p class="go-tutorDetail">>></p>
+						</div>
 					</div>
-					<button class="reserve">提交</button>
+					<div class="footer-wrapper">
+						<div class="infooter-wrapper"><button class = "more-tutor-info">更多信息</button></div>
+					</div>
 
-				</section>
-
-				<section id="identity-authentication" class="hidden">
-					<p name = "remainder">温馨提示：申请认证的姓名必须与实名认证的姓名一致，一经认证无法修改</p>
-					<section class = "img-info">
-
-						<p>清按指定要求上传认证照片</p>
-						<div class = "flex-wrapper">
-							<div class = "add-img" name = "身份证">
-								<p><i class="fa fa-plus" aria-hidden="true"></i></p>
-								<span name = "discription">身份证照片</span>
-							</div>
-							<div  class = "add-img" name = "学生证">
-								<p><i class="fa fa-plus" aria-hidden="true"></i></p>
-								<span class = "alt">学生证照片</span>
-							</div>
-							<div  class = "add-img" name = "其他证明">
-								<p><i class="fa fa-plus" aria-hidden="true"></i></p>
-								<span>其他说明</span>
-							</div>
-						</div>
-					</section>
-					<div class = "clap"></div>
-					<section class = "text-info">
-						<label>真实姓名：<input type = "text"></label>
-						<label>身份证号：<input type = "text"></label>
-						<label>学生证号：<input type = "text"></label>
-						<button>确认审核</button>
-					</section>
 				</section>
 			</div>
 		</div>

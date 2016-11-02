@@ -1,64 +1,98 @@
 $(document).ready(function() {
 	$teacherInfor = $(".teacher-Info").eq(0);
 
-	$(document).click(function(e) {
-		var element = e.target;
-		console.log(element);
-		if(element.nodeName.toLocaleLowerCase() === "i") {
-			$(".userPanel").toggleClass("hidden");
-		} else {
-			if(!$(".userPanel").hasClass("hidden")) {
-				$(".userPanel").addClass("hidden");
-			}
-			//switch panel
-
-			if($(element).hasClass("teacher-Info")) {
-				console.log("teacher");
+	function switchPanel(role) {
+		if(typeof role === "string") {
+			if(role === "teacher") {
 				$(".teacher-Info").addClass("active");
 				$(".tutoring-Info").removeClass("active");
 				$("#teacher-Info").removeClass("hidden");
 				$("#tutoring-Info").addClass("hidden");
-			}
-			if($(element).hasClass("tutoring-Info")) {
+			} else if(role === "tutor") {
 				$(".teacher-Info").removeClass("active");
 				$(".tutoring-Info").addClass("active");
 				$("#teacher-Info").addClass("hidden");
 				$("#tutoring-Info").removeClass("hidden");
+			} else {
+				console.log("Error: information do not exist; ")
 			}
-			
-			if($(element).hasClass("go-identify")){
-//				alert("hei");
-				$("nav,.content-wrapper>section").addClass("hidden");
-				$(".content-wrapper").css("top","50px");
-				$("#identity-authentication").removeClass("hidden");
-				$("header > h2").text("实名字认证");
-				$(".goBack").removeClass("hidden").text("> 返回");
-			}
+		} else {
+			console.log("TypeError: Wrong Parameter;");
+		}
+	}
+	//	switchPanel("me");
+	$(document).click(function(e) {
+		var element = e.target,
+			$target = $(element);
+		console.log(element);
+		//		alert(element);
 
-			//open tutoring information detail
-			if($(element).hasClass("tutoring-detail")) {
-				$("#tutoring-Info,nav").addClass("hidden");
-				$("#tutoring-detail,.goBack").removeClass("hidden");
-				$("header>h2").text("信息详情");
-				$(".content-wrapper").css("top", "50px");
-				return;
-			}
-			if($(element).hasClass("goBack")) {
-//				$("#tutoring-Info,nav").removeClass("hidden");
-//				$("#tutoring-detail,.goBack").addClass("hidden");
-//				$("header>h2").text("厦大家教网");
-//				$(".content-wrapper").css("top", "85px");
-				window.history.go(-1);
-			}
+		//user manage
+		if($target.hasClass("fa-user")) {
+			$(".userPanel").toggleClass("hidden");
+			return;
+		} else {
+			$(".userPanel").addClass("hidden");
+		}
 
-			//open teacher information detail
-			if($(element).hasClass("t-description")) {
-				
+		if($target.hasClass("go-identify")) {
+			window.location = "identify.html";
+		} else if($target.hasClass("go-tutorDetail")) {
+			window.location = "tutorDetail.html"
+		} else if($target.hasClass("goBack")) {
+			if($(".home-content").length === 0) {
+				history.go(-1);
+			} else {
+				//返回首頁
+				$("#tutoring-Info,nav").removeClass("hidden");
+				$("#tutoring-detail,.goBack").addClass("hidden");
+			}
+		}
 
+		/*----------------home page----------------------*/
+		//switch panel
+		if($target.hasClass("teacher-Info")) {
+			switchPanel("teacher");
+			return;
+		} else if($target.hasClass("tutoring-Info")) {
+			switchPanel("tutor");
+			return;
+		}
+		if($target.hasClass("more-tutor-info")) {
+			//			$.post(url,"more",function(){
+			//			
+			//			})
+			alert("没有更多信息，请随时关注我们的更新");
+			return;
+		}
+		/*---------------tutor Detail page----------------*/
+		if($target.hasClass("reserve")) {
+			$("#tutoring-detail").addClass("hidden");
+			$("#reservation-Form").removeClass("hidden");
+		} else if($target.hasClass("submit-reserve")) {
+			var input = $("#reservation-Form  textarea").val();
+			if(input === "") {
+				alert("请您输入您的说明！")
+			} else if(input.length > 200) {
+				alert("输入不得超过200字，请重新输入");
+				$("textarea").eq(0).focus().select();
+			} else {
+				var data = {};
+				data = {
+					"tutorInforID": $(".tutorInfoID").text(),
+					"description": $("#reservation-Form  textarea").val(),
+				}
+				console.log(data);
+				alert("提交成功");
 			}
 
 		}
-
+		
+		
+		/*---------------identify page----------------*/
+		if(){
+			
+		}
+		
 	})
-
 });

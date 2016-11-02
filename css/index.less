@@ -1,9 +1,6 @@
 @charset "utf-8";
 @bgColor: #fff;
 @headHeight: 50px;
-.tBorder {
-    border: 1px solid red;
-}
 .tb {
     border: 1px solid red;
 }
@@ -15,15 +12,13 @@
 .hidden {
     display: none !important;
 }
-.wrapper {
+body {
     background: url("../img/bg.jpg");
     background-attachment: fixed;
-//  .tb;
     background-repeat: none;
-    background-size: 100% 667px;
-    min-height: 800px;
-//  overflow: hidden;
+    background-size: 100%;
 }
+.wrapper {}
 /*---------------------Header-----------------*/
 header {
     position: fixed;
@@ -35,8 +30,9 @@ header {
     z-index: 100;
     & > .goBack {
         position: fixed;
+        width: 50px;
         left: 5px;
-        right: 10px;
+        right: 10px; //      .tb;
     }
     & > h2 {
         text-align: center;
@@ -50,7 +46,7 @@ header {
     font-size: 24px;
 }
 .userPanel {
-    position: fixed;
+    position: absolute;
     top: 40px;
     right: 20px;
     background-color: #458B74;
@@ -68,14 +64,14 @@ nav {
     height: 35px;
     line-height: 30px;
     background-color: @bgColor;
-    display: flex;
-//  z-index: 100;
+    display: flex; //  z-index: 100;
     padding-bottom: 10px;
+    z-index: 10;
     & > a {
         text-align: center;
         flex: 1;
         width: 50%;
-        color: #000; //      .tBorder;
+        color: #000;
     }
     span {
         display: inline-block;
@@ -87,45 +83,97 @@ nav {
     background-color: #EBEBEB;
 }
 /*---------------------content-wapper-----------------*/
-.content-wrapper {
+.home-content {
     position: relative;
     top: 85px;
-    padding-top:5px;
-    .tb;
+    padding-top: 5px; //  .tb;
     & > section {
         width: 100%;
         margin-top: 5px;
     }
 }
-/*---------------------Information Panel-----------------*/
 #teacher-Info {
     display: flex;
     -webkit-flex-wrap: wrap;
     padding: 0 8px;
     & > div {
-        width: 200px; //      height: 200px;
+        width: 200px;
         flex: 1;
         margin: 3px;
         background-color: @bgColor;
         display: inline-block;
-        text-align: center; //      .tBorder;
+        text-align: center;
     }
 }
 #tutoring-Info {
-    background-color: @bgColor;
+//  overflow: hidden;
+    margin: 8px auto 0 auto;
+    
 }
-/*---------------------Tutoring Detail---------*/
+.in-tutoring-Info {
+    background-color: @bgColor;
+    width: 97%;
+    height: 520px;
+    margin:0 auto;
+    padding: 10px;
+    overflow: scroll;
+}
+.tutor-item {
+    display: flex;
+    justify-content: space-around;
+    height: 20px; //  .tb;
+    margin-bottom: 10px;
+    text-align: center;
+    p[name= "address"] {
+        //     .tb;
+        flex: 0.7;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+.footer-wrapper {
+//  .tb;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    height: 50px; //  background-color: @bgColor;
+
+    &>div {
+//      .tb;
+        width: 97%;
+        height: 100%;
+//      line-height: 40px;
+        margin:0 auto;
+//      background-color: @bgColor;
+        padding-top:10px;
+//      position: relative;
+   
+        
+        
+    }
+    button {
+        background-color: #406B5F;
+        color: #fff; //      height: 25px;
+        font-size: 12px;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+}
+.go-tutorDetail {
+    color: blue;
+}
+/*---------page 3------------Tutoring Detail--------------------*/
 #tutoring-detail {
-    margin-top:0;
+    margin-top: @headHeight;
     .infoTitle {
         line-height: 30px;
-        padding:0 10px;
-//      margin-top: 5px;
+        padding: 0 10px;
     }
     .releaseTime {
         float: right;
         font-size: 14px;
-        
     }
 }
 .infoItem {
@@ -146,24 +194,17 @@ nav {
     }
 }
 .reserve {
-    line-height: 32px;
-    font-size: 26px;
-    background-color: #406B5F;
-    border-radius: 5px;
-    display: block;
-    width: 80px; //  .tb;
-    margin: 20px auto 0;
-    position: relative;
-    bottom: 10px;
-}
-/*---------------------Resevation Form-----------------*/
-#reservation-Form {
-    .tb;
+    font-size:20px !important;
+    }
+.submit-reserve:extend(.reserve){}
+.in-reservation-Form {
+    margin-top: @headHeight;
+//  .tb;
     padding: 20px;
     .tutorInfoID {}
     & >.description {
         height: 400px;
-        .tb;
+//      .tb;
         background-color: @bgColor;
         margin-top: 10px;
         padding: 5px;
@@ -173,13 +214,20 @@ nav {
         border: 2px solid #78D9BD;
         display: block;
         width: 80%;
-        margin: 20px auto 0;
+        margin: 0 auto;
         height: 250px;
     }
 }
-/*---------------------Identity Authentication-----------------*/
+/*----------page 2 -----------Identity Authentication-----------------*/
 #identity-authentication {
-//  background-image: url("../img/bg_identify.jpg");
+    background-attachment: fixed;
+    position: relative;
+    top: @headHeight;
+    padding-top: 5px; //  .tb;
+    & > section {
+        width: 100%;
+        margin-top: 5px;
+    }
 }
 .img-info {
     padding: 0 10px;
@@ -207,8 +255,7 @@ nav {
 p[name = "remainder"] {
     //  .tb;
     background-color: #3E3554;
-    color: #fff;
-//  text-space-collapse: 1em;
+    color: #fff; //  text-space-collapse: 1em;
     padding: 5px 10px;
     line-height: 25px;
     position: relative;
@@ -228,11 +275,11 @@ p[name = "remainder"] {
     background-color: @bgColor;
 }
 .text-info {
-    padding:0 10px;
+    padding: 0 10px;
     &>label {
         display: block;
         width: 100%;
-        .tb;
+//      .tb;
         margin: 10px auto;
         background-color: @bgColor;
         line-height: 30px;
@@ -240,19 +287,19 @@ p[name = "remainder"] {
         padding: 0 16px;
         border-radius: 16px;
     }
-    input{
-        line-height:30px ;
+    input {
+        line-height: 30px;
     }
-    .tb;
+//  .tb;
     button {
         background-color: #642170;
         color: #fff;
-        width:100%;
+        width: 100%;
         line-height: 30px;
         font-size: 14px;
         padding: 5px 16px;
         border-radius: 12px;
         display: block;
-        margin:10px auto 0 auto;
+        margin: 15px auto 0 auto;
     }
 }
