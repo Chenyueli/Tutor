@@ -1,4 +1,22 @@
 ;
+
+function GoNextPage() {
+	$(".register-1").addClass("hidden");
+	$(".register-2").removeClass("hidden");
+	$("header>p").text(">上一步");
+};
+
+function SwithPages(ele) {
+	if($("ele:contains('登录')").length > 0) {
+		window.location = "login.html";
+		alert("登录");
+	}else if($("ele:contains('上一步')").length > 0) {
+		$(".register-1").removeClass("hidden");
+		$(".register-2").addClass("hidden");
+	}
+	console.log($("ele:contains('登录')"));
+}
+
 $(document).ready(function() {
 	var $mobile = $("#mobile"),
 		$password = $("#password"),

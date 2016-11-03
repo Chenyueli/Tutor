@@ -299,3 +299,22 @@ p[name="remainder"] {
   line-height: 30px !important;
   color: #fff !important;
 }
+/*----------page 3 -----------Register-----------------*/
+#register {
+  border: 1px solid red;
+  padding: 20px 0;
+  margin-top: 50px;
+  text-align: center;
+}
+#register * {
+  border: 1px solid red;
+}
+#register input,
+#register textarea {
+  width: 100%;
+  display: block;
+  margin: 10px auto;
+  line-height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+}

@@ -63,7 +63,9 @@ $(document).ready(function() {
 
 		if($target.hasClass("go-identify")) {
 			window.location = "identify.html";
-		} else if($target.hasClass("go-tutorDetail")) {
+		} else if($target.hasClass("my-home")){
+			window.location = "login.html"
+		}else if($target.hasClass("go-tutorDetail")) {
 			window.location = "tutorDetail.html"
 		} else if($target.hasClass("goBack")) {
 			if($(".home-content").length === 0) {
@@ -120,5 +122,10 @@ $(document).ready(function() {
 		//			
 		//		}
 
+
+		/*---------------register page----------------*/
+	
+	
+	
 	})
 });

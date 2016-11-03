@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<!--<script src="js/mobile-util.js" type="text/javascript" charset="utf-8"></script>-->
+
+		<meta name="viewport" content="width = device-width,initial-scale = 1">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/index.css" rel="stylesheet">
+		<title>找家教，上小夏</title>
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<header>
+				<p class="goBack" onclick="SwithPages(this)">> 登录</p>
+				<h2>手机注册</h2>
+			</header>
+			<div id="register">
+				<form>
+					<section class="register-1">
+						<div>
+							<input type="text" placeholder="+86 请输入您的手机号">
+							<input type="text" placeholder="请输入短信验证码">
+							<input class="resend" type="button" value="重新发送">
+						</div>
+						<div class="clap"></div>
+						<div>
+							<input type="password" placeholder="请输入您的密码">
+							<input type="password" placeholder="请再输入您的密码">
+							<input class="next" type="button" value="下一步" onclick = "GoNextPage()"/>
+						</div>
+					</section>
+
+					<section class="register-2 hidden">
+						<input type="text" placeholder="请输入您的姓名">
+						<input type="text" placeholder="请输入您的地址">
+						<textarea>请输入你的学历介绍</textarea>
+						<textarea>请输入您的教学经验</textarea>
+						<textarea>请输入您的自我介绍</textarea>’
+						<button>注册</button>
+						<button>认证</button>
+					</section>
+
+				</form>
+
+			</div>
+
+		</div>
+		<script src="js/jquery-3.1.1.js"></script>
+		<script src="js/login.js"></script>
+	</body>
+
+</html>
