@@ -8,8 +8,8 @@
 		<link href="css/index.css" rel="stylesheet">
 		<title>实名认证</title>
 		<style>
-			body{
-				  background-image: url("img/bg_identify.jpg");
+			body {
+				background-image: url("img/bg_identify.jpg");
 			}
 		</style>
 	</head>
@@ -17,7 +17,7 @@
 	<body>
 		<div class="wrapper">
 			<header>
-				
+
 				<p class="goBack">> 返回</p>
 				<h2>实名认证</h2>
 				<i class="fa fa-user"></i>
@@ -30,20 +30,38 @@
 				<p name="remainder">温馨提示：申请认证的姓名必须与实名认证的姓名一致，一经认证无法修改</p>
 				<section class="img-info">
 
-					<p>清按指定要求上传认证照片</p>
+					<p>请按指定要求上传认证照片</p>
 					<div class="flex-wrapper">
-						<div class="add-img" name="身份证">
-							<p><i class="fa fa-plus" aria-hidden="true"></i></p>
-							<span name="discription">身份证照片</span>
+						<div class="img-panel" title="身份证">
+							<div class="show-img-panel">
+								<!--<img width='80px' height='80px' src="img/teacher1.png" />-->
+							</div>
+							<div class="add-file-wrapper">
+								<input type="file" name="file" onchange="PreviewImage(this)" id="idCard" />
+								<i class="fa fa-plus" aria-hidden="true"></i>
+							</div>
+							<span>身份证照片</span>
 						</div>
-						<div class="add-img" name="学生证">
-							<p><i class="fa fa-plus" aria-hidden="true"></i></p>
-							<span class="alt">学生证照片</span>
+
+						<div class="img-panel" title="学生证 ">
+							<div class="show-img-panel">
+							</div>
+							<div class="add-file-wrapper">
+								<input type="file" name="file" onchange="PreviewImage(this)" id="stuCard" />
+								<i class="fa fa-plus" aria-hidden="true"></i>
+							</div>
+							<span>学生证照片</span>
 						</div>
-						<div class="add-img" name="其他证明">
-							<p><i class="fa fa-plus" aria-hidden="true"></i></p>
+						<div class="img-panel" title="其他证件">
+							<div class="show-img-panel">
+							</div>
+							<div class="add-file-wrapper">
+								<input type="file" name="file" onchange="PreviewImage(this)" id="description" />
+								<i class="fa fa-plus" aria-hidden="true"></i>
+							</div>
 							<span>其他说明</span>
 						</div>
+
 					</div>
 				</section>
 				<div class="clap"></div>
@@ -51,13 +69,19 @@
 					<label>真实姓名：<input type = "text"></label>
 					<label>身份证号：<input type = "text"></label>
 					<label>学生证号：<input type = "text"></label>
-					<button>确认审核</button>
+					<!--<button>确认审核</button>-->
 				</section>
+				<div class="footer-wrapper">
+					<div class="infooter-wrapper"><button class = "confirmIdentify">确认审核</button></div>
+				</div>
 			</section>
 		</div>
 		<script src="js/jquery-3.1.1.js"></script>
 		<script src="js/index.js"></script>
-		<script src = "js/mobile-util.js"></script>
+		<script src="js/mobile-util.js"></script>
+		<script>
+		</script>
+
 	</body>
 
 </html>

@@ -1,3 +1,29 @@
+function PreviewImage(inputFileEle) {
+	var filextension = inputFileEle.value.substring(inputFileEle.value.lastIndexOf("."), inputFileEle.value.length);
+	filextension = filextension.toLowerCase();
+	if((filextension != '.jpg') && (filextension != '.gif') && (filextension != '.jpeg') && (filextension != '.png') && (filextension != '.bmp')) {
+		alert("对不起，系统仅支持标准格式的照片，请您调整格式后重新上传，谢谢 !");
+		inputFileEle.focus();
+	} else {
+		var path;
+		if(document.all) //IE
+		{
+			inputFileEle.select();
+			path = document.selection.createRange().text;
+
+			document.getElementById("imgPreview").innerHTML = "";
+			document.getElementById("imgPreview").style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='scale',src=\"" + path + "\")"; //使用滤镜效果  
+		} else //FF
+		{
+			//						path = .getAsDataURL();
+			path = window.URL.createObjectURL(inputFileEle.files[0]);
+			inputFileEle.parentElement.previousElementSibling.innerHTML = "<img width='80px' height='80px' src='" + path + "'/>";
+			inputFileEle.parentElement.style.opacity = 0;
+			console.log(path);
+		}
+	}
+}
+
 $(document).ready(function() {
 	$teacherInfor = $(".teacher-Info").eq(0);
 
@@ -87,12 +113,12 @@ $(document).ready(function() {
 			}
 
 		}
-		
-		
+
 		/*---------------identify page----------------*/
-		if(){
-			
-		}
-		
+		//		if(){
+		//			
+		//			
+		//		}
+
 	})
 });
