@@ -24,33 +24,41 @@
 	<body>
 		<div class="wrapper">
 			<header>
-				<p class="goBack" onclick="SwithPages(this)">> 登录</p>
+
+				<!--<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>-->
+				<p class="goBack go-login">> 登录</p>
 				<h2>手机注册</h2>
 			</header>
-			<div id="register">
-				<form>
+			<div>
+				<form id="registerForm">
+					<p class="warning"></p>
+
 					<section class="register-1">
 						<div>
-							<input type="text" placeholder="+86 请输入您的手机号">
-							<input type="text" placeholder="请输入短信验证码">
-							<input class="resend" type="button" value="重新发送">
+							<input name="cellPhone" type="text" placeholder="+86 请输入您的手机号" value="18817316609" id="cellPhone" />
+							<input name="verNum" type="text" placeholder="请输入短信验证码" value="1234" />
+							<input id="sendMsg" type="button" value="发送验证短信" />
 						</div>
 						<div class="clap"></div>
 						<div>
-							<input type="password" placeholder="请输入您的密码">
-							<input type="password" placeholder="请再输入您的密码">
-							<input class="next" type="button" value="下一步" onclick = "GoNextPage()"/>
+							<div>
+								<i class="fa fa-eye togglePwdView" aria-hidden="true"></i>
+								<input name="pwd" type="password" placeholder="请输入您的密码" id="pwd" />
+							</div>
+
+							<input name="rePwd" type="password" placeholder="请再输入您的密码" />
+							<input class="nextPage" type="button" value="下一步" />
 						</div>
 					</section>
 
 					<section class="register-2 hidden">
-						<input type="text" placeholder="请输入您的姓名">
-						<input type="text" placeholder="请输入您的地址">
-						<textarea>请输入你的学历介绍</textarea>
-						<textarea>请输入您的教学经验</textarea>
-						<textarea>请输入您的自我介绍</textarea>’
-						<button>注册</button>
-						<button>认证</button>
+						<input name="realName" type="text" placeholder="请输入您的姓名" value="陈毛毛" />
+						<input name="address" type="text" placeholder="请输入您的地址" value="乌托邦大学" />
+						<textarea name="certificate">请输入你的学历介绍</textarea>
+						<textarea name="expericence">请输入您的教学经验</textarea>
+						<textarea name="introduce">请输入您的自我介绍</textarea>
+						<button class="register">注册</button>
+						<!--<button class= "go-identify">认证</button>-->
 					</section>
 
 				</form>
@@ -59,7 +67,8 @@
 
 		</div>
 		<script src="js/jquery-3.1.1.js"></script>
-		<script src="js/login.js"></script>
+		<script src="js/js.cookie.js"></script>
+		<script src="js/register.js"></script>
 	</body>
 
 </html>

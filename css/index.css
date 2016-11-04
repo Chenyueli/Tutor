@@ -300,17 +300,17 @@ p[name="remainder"] {
   color: #fff !important;
 }
 /*----------page 3 -----------Register-----------------*/
-#register {
+#registerForm {
   border: 1px solid red;
   padding: 20px 0;
   margin-top: 50px;
   text-align: center;
 }
-#register * {
+#registerForm * {
   border: 1px solid red;
 }
-#register input,
-#register textarea {
+#registerForm input,
+#registerForm textarea {
   width: 100%;
   display: block;
   margin: 10px auto;
