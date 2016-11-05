@@ -1,7 +1,7 @@
 ;
 $(document).ready(function() {
 	var $cellPhone = $("#cellPhone"),
-		$password = $("#password"),
+		$pwd = $("#pwd"),
 		$warning = $(".warning").eq(0);
 
 	//验证手机号
@@ -18,10 +18,29 @@ $(document).ready(function() {
 			warning = '请输入有效的手机号码！';
 		} else {
 			return true;
-
 		}
 		return warning;
 	};
+
+	//登录验证，返回 true /warning 
+	function validateLogin() {
+		var warning = "";
+		var cellPhone = $cellPhone.val(),
+			pwd = $pwd.val(),
+			role = $("[name='role']").filter(":checked").val();
+			alert(role);
+		var result = validatemobile(cellPhone);
+		if(result !== true) {
+			warning = result;
+		} else if(pwd === "") {
+			warning = "请输入密码";
+		} else if(role === undefined) {
+			warning = "请选择学生 或者 老师";
+		} else {
+			return true;
+		}
+		return warning;
+	}
 
 	//登录页面  初始化
 	(function init() {
@@ -41,45 +60,53 @@ $(document).ready(function() {
 			}
 		});
 
-		$password.focus(function() {
+		$pwd.focus(function() {
 			var pw = Cookies.get($cellPhone.val());
 			if(pw !== null) {
 				this.value = pw;
 			}
 			this.select();
 		});
+
 		$pwsVisibled.click(function() {
 			var pwdEle = document.getElementById("pwd");
 			pwdEle.type = (pwdEle.type === "password") ? "text" : "password";
 		});
 
 		//必要事件绑定
+
 		$logIn.click(function(e) {
 			e.preventDefault();
-			var phoneNum = $cellPhone.val();
-			if(validatemobile(phoneNum) !== true) {
-				//账号密码登录
+			var result = validateLogin();
+			if(result !== true) {
+				$warning.text(result);
+			} else {
+				//验证成功 , 发送登录请求
+				//						alert("ok");
 				var data = {
-						cellPhone: $cellPhone.val(),
-						pwd: $password.val()
-					}
-					//						alert("ok");
-				console.log(data);
-				//						$.post(url,data,function(data,textStatus,jqXHR){
-				//							    $warning.html(data);
-				//						},json)
-			}
-			var data = $("#registerForm").serialize();
-			data = decodeURIComponent(data, true); //解决中文乱码
-			alert(data);
+					cellPhone: $cellPhone.val(),
+					pwd: $pwd.val(),
+					role: $("[name='role']").filter(":checked").val(),
+				}
 
+				console.log(data);
+				alert(data);
+//				$.post(url, data, function(data, textStatus, jqXHR) {
+//					$warning.html(data);
+//					Cookies.set(data.cellPhone,data.pwd);
+//				}, json);
+				var data = $("#loginForm").serialize();
+				data = decodeURIComponent(data, true); //解决中文乱码
+				alert(data);
+			}
 		});
+
 		$goRegister.click(function(e) {
 			e.preventDefault();
 			self.location = 'register.html';
 		});
-		
-//		$cellPhone.focus();
+
+		//		$cellPhone.focus();
 
 	})();
 });

@@ -122,9 +122,6 @@ $(document).ready(function() {
 		//			
 		//		}
 
-
-		/*---------------register page----------------*/
-	
 	
 	
 	})
