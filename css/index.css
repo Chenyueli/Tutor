@@ -30,8 +30,7 @@ header {
 header > .goBack {
   position: fixed;
   width: 50px;
-  left: 5px;
-  right: 10px;
+  left: 10px;
 }
 header > h2 {
   text-align: center;
@@ -159,22 +158,22 @@ nav span {
 .footer-wrapper {
   position: fixed;
   width: 100%;
-  bottom: 20px;
+  bottom: 40px;
   text-align: center;
   height: 50px;
-}
-.footer-wrapper button {
-  background-color: #406B5F;
-  color: #fff;
-  font-size: 12px;
-  padding: 5px 10px;
-  border-radius: 5px;
 }
 .infooter-wrapper {
   width: 97%;
   height: 100%;
   margin: 0 auto;
-  padding-top: 10px;
+}
+.more-tutor-info {
+  margin-top: 20px;
+  background-color: #406B5F;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 .go-tutorDetail {
   color: blue;
@@ -330,23 +329,29 @@ p[name="remainder"] {
 }
 /*----------page 3 -----------Register-----------------*/
 #registerForm {
-  border: 1px solid red;
   padding-top: 20px;
   margin-top: 50px;
   text-align: center;
   color: #fff;
 }
-#registerForm * {
-  border: 1px solid red;
-}
 #registerForm input,
-#registerForm textarea {
+#registerForm textarea,
+#registerForm .register {
+  text-align: center;
   width: 80%;
   display: block;
-  margin: 10px auto;
+  margin: 20px auto;
   line-height: 30px;
   border-radius: 5px;
   padding: 5px;
+}
+#registerForm .verNum-wrapper {
+  margin: 20px auto 40px;
+  width: 80%;
+}
+#registerForm .verNum-wrapper > input[name="verNum"] {
+  width: 100%;
+  margin: 0;
 }
 #registerForm .pwd-wrapper {
   position: relative;
@@ -360,18 +365,15 @@ p[name="remainder"] {
   top: 11px;
   color: #82cfc7;
 }
+#registerForm input[name="pwd"] {
+  margin-top: 50px !important;
+}
 .verNum-wrapper {
   position: relative;
-  line-height: 30px;
 }
+.register,
+.nextPage,
 #sendMsg {
-  position: absolute;
-  top: 10px;
-  right: 0;
-  width: 100px;
-  line-height: 30px;
-  padding: 0 5px;
-  border-radius: 5px;
   background-color: #48B3A6;
   color: #fff;
 }

@@ -32,8 +32,7 @@ header {
     & > .goBack {
         position: fixed;
         width: 50px;
-        left: 5px;
-        right: 10px; //      .tb;
+        left: 10px; //      right: 10px; //      .tb;
     }
     & > h2 {
         text-align: center;
@@ -171,22 +170,24 @@ nav {
     //  .tb;
     position: fixed;
     width: 100%;
-    bottom: 20px;
+    bottom: 40px;
     text-align: center;
     height: 50px; //  background-color: @bgColor;
-    button {
-        background-color: #406B5F;
-        color: #fff; //      height: 25px;
-        font-size: 12px;
-        padding: 5px 10px;
-        border-radius: 5px;
-    }
 }
 .infooter-wrapper {
     width: 97%;
-    height: 100%; //      line-height: 40px;
-    margin: 0 auto; //      background-color: @bgColor;
-    padding-top: 10px; //      position: relative;
+    height: 100%;
+    margin: 0 auto;
+    //  padding-top: 10px;    
+    //      .tb; 
+}
+.more-tutor-info {
+    margin-top: 20px;
+    background-color: #406B5F;
+    color: #fff; //      height: 25px;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 .go-tutorDetail {
     color: blue;
@@ -346,23 +347,34 @@ p[name = "remainder"] {
 /*----------page 3 -----------Register-----------------*/
 @inputHeight: 38px;
 #registerForm {
-        * {
-            .tb;
-        }
-    .tb;
+    //      * {
+    //          .tb;
+    //      }
+    //  .tb;
     padding-top: 20px;
     margin-top: @headHeight;
     text-align: center;
     color: #fff;
     input,
-    textarea {
+    textarea,
+    .register {
+        text-align: center;
         //      margin:0 20px;
         width: 80%;
         display: block;
-        margin: 10px auto;
+        margin: 20px auto;
         line-height: 30px;
         border-radius: 5px;
         padding: 5px;
+    }
+    .verNum-wrapper {
+        margin: 20px auto 40px;
+        width: 80%; //      margin-left:auto;
+        //      margin-right: auto;
+        &>input[name="verNum"] {
+            width: 100%;
+            margin: 0;
+        }
     }
     .pwd-wrapper {
         //  .tb;
@@ -377,20 +389,26 @@ p[name = "remainder"] {
         top: (@inputHeight/2) - 8px;
         color: #82cfc7; //  .tb;
     }
+    input[name="pwd"] {
+        margin-top: 50px !important;
+    }
 }
 .verNum-wrapper {
     position: relative; //      width: 80%;
-    line-height: 30px;
+    //  line-height: 30px;
 }
+.register,
+.nextPage,
 #sendMsg {
-    position: absolute;
-    top: 10px;right: 0;
-    width: 100px;
-    line-height: 30px;
-    padding:0 5px;
-    border-radius: 5px;
+    //  position: absolute;
+    //  top: 0;right: 0;
+    //  width: 100px !important;
+    //  line-height: 30px;
+    //  padding:0 5px;
+    //  border-radius: 5px;
     background-color: #48B3A6;
-    color: #fff;
+    color: #fff; //  z-index: 100;
+    //  margin:0 !important;
 }
 .warning {
     color: #f00;

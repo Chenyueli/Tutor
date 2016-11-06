@@ -157,7 +157,9 @@ $(document).ready(function() {
 			} else {
 				$(".register-1").removeClass("hidden");
 				$(".register-2").addClass("hidden");
-				$("header>p").text("> 登录");
+				$(".goBack").addClass("go-login");
+				
+//				$("header>p").text("> 登录");
 
 			}
 		});
@@ -177,8 +179,9 @@ $(document).ready(function() {
 				//验证通过，进入下一页
 				$(".register-1").addClass("hidden");
 				$(".register-2").removeClass("hidden");
-				$("header>p").text(">上一步");
+//				$("header>p").text(">上一步");
 				$(".goBack").removeClass("go-login");
+				$(document.getElementsByTagName("body")).css("background-image" ,"url('img/bgRegister.jpg')");
 			}
 		});
 
