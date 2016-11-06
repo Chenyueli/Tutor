@@ -18,29 +18,43 @@
 
 	<body>
 		<div class="wrapper">
-			<div class="main">
-				<a class="homePage" href="index.html">>首页</a>
-				<div class="container">
-					<div class="logo"></div>
-					<p>打造全厦门最好的家教服务平台</p>
-					<form>
-						<!--<input id="mobile" type="text" value="清输入您的手机号" /><br />-->
-						<input id="mobile" type="text" value="13559024715" /><br />
-						<input id="password" type="password" value="请输入您的密码" /><br />
-						<div class="warning">请输入</div>
-						<select name="role" class="role">
-							<option>我是学生</option>
-							<option>我是老师</option>
-						</select><br />
-						<button class="logIn">登录</button>
-						<button class="register">注册</button>
+			<a class="homePage" href="index.html"> <i class="fa fa-home" aria-hidden="true"></i></a>
+			<div class="logo"></div>
+			<div class="footer-wrapper">
+				<div class="infooter-wrapper">
+					<p class="tagline">打造全厦门最好的家教服务平台</p>
+					<form id="loginForm">
+						<div class="warning">请重新输入</div>
+
+						<input type="text" value="13559024715" name="cellPhone" id="cellPhone" /><br />
+						<div class="pwd-wrapper">
+							<i class="fa fa-eye togglePwdView" aria-hidden="true"></i>
+							<input name="pwd" type="password" placeholder="请输入您的密码" id="pwd" />
+						</div>
+						<div class="role">
+							<label title="role"><input type = "radio" name = "role" value = "学生"/>学生</label>
+							<!--<label title="role"><input type = "radio" name = "role" checked="true" value = "学生"/>学生</label>-->
+							<label title="role"><input type = "radio" name = "role" value="老师"/>老师</label>
+						</div>
 					</form>
+					<button class="logIn">登录</button>
+					<button class="go-register">注册</button>
 				</div>
 			</div>
 		</div>
-
 		<script src="js/jquery-3.1.1.js"></script>
-		<script src = "js/login.js"></script>
+		<script src="js/mobile-util.js"></script>
+		<script src="js/js.cookie.js"></script>
+
+		<script src="js/login.js"></script>
+		<!--<script src="js/register.js"></script>-->
+
+		<script>
+			$(document).ready(function() {
+				//			$(".wrapper").css("height",document.documentElement.clientHeight);
+
+			})
+		</script>
 	</body>
 
 </html>

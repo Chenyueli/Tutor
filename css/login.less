@@ -1,44 +1,70 @@
 @charset "utf-8";
+@inputHeight: 38px;
 * {
     margin: 0;
     border: 0;
     box-sizing: border-box;
 }
+.tb {
+    border: 1px solid red;
+}
 a {
-    font-size: 16px;
+    font-size: 20px;
     color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
-.wrapper {
-    background: url("../img/bg.jpg");
+body {
+    background: url("../img/bgLogin.jpg");
+    background-attachment: fixed;
+    background-repeat: none;
     background-size: 100%;
-    background-repeat: repeat-y;
-    min-height: 667px;
-    max-width: 667px;
-    margin: 0 auto;
-}
-.container {
-    text-align: center;
+    font-size: 16px;
 }
 .logo {
-    margin: 30px auto 150px;
+    margin: 30px auto 130px;
     width: 100px;
     height: 100px;
-    /*border: solid 1px red;*/
-    background: url("../img/teacher1.png");
+    background: url("../img/logo1.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
-#mobile,
-#password {
-    height: 30px;
-    margin-top: 20px;
-    max-width: 300px;
-    border-radius: 15px;
+.tagline {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 14px;
 }
-.warning,
+#cellPhone,
+#pwd {
+    height: @inputHeight;
+    width: 280px;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    color: #7B378C; //  .tb;
+    //  box-shadow: 5px;;
+}
+.pwd-wrapper {
+    //  .tb;
+    position: relative;
+    width: 280px;
+    margin: 20px auto 0;
+}
+.fa-eye {
+    font-size: 16px;
+    position: absolute;
+    right: 5px;
+    top: (@inputHeight/2) - 8px;
+    color: #82cfc7; //  .tb;
+}
+.warning {
+    color: red;
+    margin-bottom: 10px;
+}
 .role,
 .logIn,
-.register {
+.go-register {
     /*font-size: 18px;*/
     margin-top: 20px;
 }
@@ -46,8 +72,27 @@ a {
     margin-right: 20px;
 }
 .logIn,
-.register {
+.go-register {
     background-color: #82cfc7;
     border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+    color: #fff; //  .tb;
+}
+label{
+    color: #fff;
+    display: inline-block;
     width: 80px;
+}
+.footer-wrapper {
+    position: fixed;
+    width: 100%;
+    bottom: 50px;
+    text-align: center; 
+}
+.infooter-wrapper {
+    width: 97%;
+    height: 100%; //      line-height: 40px;
+    margin: 0 auto; //      background-color: @bgColor;
 }

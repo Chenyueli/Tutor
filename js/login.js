@@ -1,102 +1,112 @@
 ;
 $(document).ready(function() {
-	var $mobile = $("#mobile"),
-		$password = $("#password"),
+	var $cellPhone = $("#cellPhone"),
+		$pwd = $("#pwd"),
 		$warning = $(".warning").eq(0);
-	$logIn = $(".logIn").eq(0);
-	$register = $(".register").eq(0);
 
 	//验证手机号
-	function validatemobile(mobile) {
+	function validatemobile(cellPhone) {
 		var warning = "";
-		if(mobile.length == 0) {
+		// 验证130-139,150-159,180-189,170-179号码段的手机号码
+		var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
+
+		if(cellPhone.length == 0) {
 			warning = '请输入手机号码！';
-		} else if(mobile.length != 11) {
+		} else if(cellPhone.length != 11) {
 			warning = '请输入11位的手机号码！';
+		} else if(!myreg.test(cellPhone)) {
+			warning = '请输入有效的手机号码！';
 		} else {
-			// 验证130-139,150-159,180-189,170-179号码段的手机号码
-			var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
-			if(!myreg.test(mobile)) {
-				warning = '请输入有效的手机号码！';
-			}
-		}
-		if(warning === "") {
-			//						alert("ok");
 			return true;
-		} else {
-			$warning.text(warning);
-			//						$mobile.focus();
-			//						alert("error");
-			return false;
 		}
+		return warning;
+	};
+
+	//登录验证，返回 true /warning 
+	function validateLogin() {
+		var warning = "";
+		var cellPhone = $cellPhone.val(),
+			pwd = $pwd.val(),
+			role = $("[name='role']").filter(":checked").val();
+			alert(role);
+		var result = validatemobile(cellPhone);
+		if(result !== true) {
+			warning = result;
+		} else if(pwd === "") {
+			warning = "请输入密码";
+		} else if(role === undefined) {
+			warning = "请选择学生 或者 老师";
+		} else {
+			return true;
+		}
+		return warning;
 	}
 
+	//登录页面  初始化
 	(function init() {
-		//绑定事件
-		$mobile.focus(function() {
+		var $logIn = $(".logIn").eq(0),
+			$pwsVisibled = $(".togglePwdView").eq(0),
+			$goRegister = $(".go-register").eq(0);
+
+		//交互优化
+		$("input").focus(function() {
 			this.select();
 		});
-		$mobile.blur(function() {
-			validatemobile($mobile.val());
+		$cellPhone.blur(function(e) {
+			var phoneNum = $(this).val();
+			var result = validatemobile(phoneNum);
+			if(result !== true) {
+				$warning.text(result);
+			}
 		});
-		$password.focus(function() {
-			var pw = CookieUtil.getCookie($mobile.val());
+
+		$pwd.focus(function() {
+			var pw = Cookies.get($cellPhone.val());
 			if(pw !== null) {
 				this.value = pw;
 			}
 			this.select();
 		});
+
+		$pwsVisibled.click(function() {
+			var pwdEle = document.getElementById("pwd");
+			pwdEle.type = (pwdEle.type === "password") ? "text" : "password";
+		});
+
+		//必要事件绑定
+
 		$logIn.click(function(e) {
 			e.preventDefault();
-			if(validatemobile($mobile.val())) {
-				//账号密码登录
+			var result = validateLogin();
+			if(result !== true) {
+				$warning.text(result);
+			} else {
+				//验证成功 , 发送登录请求
+				//						alert("ok");
 				var data = {
-						cellPhone: $mobile.val(),
-						pwd: $password.val()
-					}
-					//						alert("ok");
-				console.log(data);
-				//						$.post(url,data,function(data,textStatus,jqXHR){
-				//							    $warning.html(data);
-				//						},json)
-			}
+					cellPhone: $cellPhone.val(),
+					pwd: $pwd.val(),
+					role: $("[name='role']").filter(":checked").val(),
+				}
 
+				console.log(data);
+				alert(data);
+//				$.post(url, data, function(data, textStatus, jqXHR) {
+//					$warning.html(data);
+//					Cookies.set(data.cellPhone,data.pwd);
+//				}, json);
+				var data = $("#loginForm").serialize();
+				data = decodeURIComponent(data, true); //解决中文乱码
+				alert(data);
+			}
 		});
-		$register.click(function(e) {
+
+		$goRegister.click(function(e) {
 			e.preventDefault();
-			self.location = 'index.html';
+			self.location = 'register.html';
 		});
-		$mobile.focus();
+
+		//		$cellPhone.focus();
 
 	})();
-
 });
-/*
- * Cookies-API, 保存格式：name1=value1；name2=value2；
- * @param name
- * @param value
- */
-var CookieUtil = {
-	setCookie: function(name, value) {
-		var Days = 30;
-		var exp = new Date();
-		exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
-		document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
-	},
-
-	getCookie: function(name) {
-		var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-		if(arr = document.cookie.match(reg))
-			return unescape(arr[2]);
-		else
-			return null;
-	},
-	delCookie: function(name) {
-		var exp = new Date();
-		exp.setTime(exp.getTime() - 1);
-		var cval = this.getCookie(name);
-		if(cval != null) {
-			document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
-		}
-	}
-};
