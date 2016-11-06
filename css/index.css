@@ -119,7 +119,7 @@ nav span {
   font-weight: 600;
 }
 .tInfo .tName {
-  margin-right: 4px ;
+  margin-right: 4px;
 }
 .tInfo .tCourse span {
   margin-right: 5px;
@@ -331,19 +331,43 @@ p[name="remainder"] {
 /*----------page 3 -----------Register-----------------*/
 #registerForm {
   border: 1px solid red;
-  padding: 20px 0;
+  padding-top: 20px;
   margin-top: 50px;
   text-align: center;
-}
-#registerForm * {
-  border: 1px solid red;
+  color: #fff;
 }
 #registerForm input,
 #registerForm textarea {
-  width: 100%;
+  width: 80%;
   display: block;
   margin: 10px auto;
   line-height: 30px;
   border-radius: 5px;
   padding: 5px;
+}
+#registerForm .pwd-wrapper {
+  position: relative;
+  width: 280px;
+  margin: 20px auto 0;
+}
+#registerForm .fa-eye {
+  font-size: 16px;
+  position: absolute;
+  right: 5px;
+  top: 11px;
+  color: #82cfc7;
+}
+.verNum-wrapper {
+  position: relative;
+}
+#sendMsg {
+  position: absolute;
+  width: 100px!important;
+  top: 0;
+  right: 0;
+  background-color: #48B3A6;
+  color: #fff;
+}
+.warning {
+  color: #f00;
 }

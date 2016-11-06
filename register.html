@@ -24,20 +24,19 @@
 	<body>
 		<div class="wrapper">
 			<header>
-
-				<!--<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>-->
-				<p class="goBack go-login">> 登录</p>
+				<p class="goBack go-login"> <i class="fa fa-angle-left" aria-hidden="true"></i> </p>
 				<h2>手机注册</h2>
 			</header>
 			<div>
 				<form id="registerForm">
 					<p class="warning"></p>
-
 					<section class="register-1">
 						<div>
-							<input name="cellPhone" type="text" placeholder="+86 请输入您的手机号" value="18817316609" id="cellPhone" />
-							<input name="verNum" type="text" placeholder="请输入短信验证码" value="1234" />
-							<input id="sendMsg" type="button" value="发送验证短信" />
+							<input name="cellPhone" type="text" placeholder="+86 请输入您的手机号" value="" id="cellPhone" />
+							<div class = "verNum-wrapper">
+								<input name="verNum" type="text" placeholder="请输入短信验证码" value="" />
+								<input id="sendMsg" type="button" value="发送验证短信" />
+							</div>
 						</div>
 						<div class="clap"></div>
 						<div>
@@ -45,7 +44,6 @@
 								<i class="fa fa-eye togglePwdView" aria-hidden="true"></i>
 								<input name="pwd" type="password" placeholder="请输入您的密码" id="pwd" />
 							</div>
-
 							<input name="rePwd" type="password" placeholder="请再输入您的密码" />
 							<input class="nextPage" type="button" value="下一步" />
 						</div>
