@@ -336,6 +336,9 @@ p[name="remainder"] {
   text-align: center;
   color: #fff;
 }
+#registerForm * {
+  border: 1px solid red;
+}
 #registerForm input,
 #registerForm textarea {
   width: 80%;
@@ -359,12 +362,16 @@ p[name="remainder"] {
 }
 .verNum-wrapper {
   position: relative;
+  line-height: 30px;
 }
 #sendMsg {
   position: absolute;
-  width: 100px!important;
-  top: 0;
+  top: 10px;
   right: 0;
+  width: 100px;
+  line-height: 30px;
+  padding: 0 5px;
+  border-radius: 5px;
   background-color: #48B3A6;
   color: #fff;
 }

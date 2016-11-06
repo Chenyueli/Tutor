@@ -29,13 +29,14 @@
 			</header>
 			<div>
 				<form id="registerForm">
-					<p class="warning"></p>
+
 					<section class="register-1">
 						<div>
 							<input name="cellPhone" type="text" placeholder="+86 请输入您的手机号" value="" id="cellPhone" />
-							<div class = "verNum-wrapper">
+							<div class="verNum-wrapper">
 								<input name="verNum" type="text" placeholder="请输入短信验证码" value="" />
-								<input id="sendMsg" type="button" value="发送验证短信" />
+								<!--<input id="sendMsg" type="button" value="发送验证短信" />-->
+								<button id="sendMsg">发送验证短信</button>
 							</div>
 						</div>
 						<div class="clap"></div>
@@ -45,6 +46,7 @@
 								<input name="pwd" type="password" placeholder="请输入您的密码" id="pwd" />
 							</div>
 							<input name="rePwd" type="password" placeholder="请再输入您的密码" />
+							<p class="warning"></p>
 							<input class="nextPage" type="button" value="下一步" />
 						</div>
 					</section>
@@ -55,6 +57,8 @@
 						<textarea name="certificate">请输入你的学历介绍</textarea>
 						<textarea name="expericence">请输入您的教学经验</textarea>
 						<textarea name="introduce">请输入您的自我介绍</textarea>
+						<p class="warning"></p>
+
 						<button class="register">注册</button>
 						<!--<button class= "go-identify">认证</button>-->
 					</section>
