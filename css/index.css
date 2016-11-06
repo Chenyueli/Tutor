@@ -95,8 +95,8 @@ nav span {
   padding: 0 8px;
 }
 #teacher-Info > div {
-  width: 200px;
-  flex: 1;
+  border: 1px solid red;
+  width: 40%;
   margin: 3px;
   background-color: #ffffff;
   display: inline-block;

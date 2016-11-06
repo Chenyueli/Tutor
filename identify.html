@@ -17,12 +17,11 @@
 	<body>
 		<div class="wrapper">
 			<header>
-
 				<p class="goBack">> 返回</p>
 				<h2>实名认证</h2>
 				<i class="fa fa-user"></i>
 				<div class="userPanel hidden">
-					<p class="my-home">个人中心</p>
+					<p class="user-center">个人中心</p>
 					<p class="go-identify">用户认证</p>
 				</div>
 			</header>
@@ -37,7 +36,7 @@
 								<!--<img width='80px' height='80px' src="img/teacher1.png" />-->
 							</div>
 							<div class="add-file-wrapper">
-								<input type="file" name="file" onchange="PreviewImage(this)" id="idCard" />
+								<input type="file" name="file" onchange="validateImg(this)" id="idCard" />
 								<i class="fa fa-plus" aria-hidden="true"></i>
 							</div>
 							<span>身份证照片</span>
@@ -47,7 +46,7 @@
 							<div class="show-img-panel">
 							</div>
 							<div class="add-file-wrapper">
-								<input type="file" name="file" onchange="PreviewImage(this)" id="stuCard" />
+								<input type="file" name="file" onchange="validateImg(this)" id="stuCard" />
 								<i class="fa fa-plus" aria-hidden="true"></i>
 							</div>
 							<span>学生证照片</span>
@@ -56,7 +55,7 @@
 							<div class="show-img-panel">
 							</div>
 							<div class="add-file-wrapper">
-								<input type="file" name="file" onchange="PreviewImage(this)" id="description" />
+								<input type="file" name="file" onchange="validateImg(this)" id="description" />
 								<i class="fa fa-plus" aria-hidden="true"></i>
 							</div>
 							<span>其他说明</span>
