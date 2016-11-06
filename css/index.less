@@ -131,22 +131,13 @@ nav {
         text-overflow: ellipsis;
     }
 }
-
-
 .footer-wrapper {
     //  .tb;
     position: fixed;
     width: 100%;
-    bottom: 0;
+    bottom: 20px;
     text-align: center;
     height: 50px; //  background-color: @bgColor;
-    &>div {
-        //      .tb;
-        width: 97%;
-        height: 100%; //      line-height: 40px;
-        margin: 0 auto; //      background-color: @bgColor;
-        padding-top: 10px; //      position: relative;
-    }
     button {
         background-color: #406B5F;
         color: #fff; //      height: 25px;
@@ -154,6 +145,12 @@ nav {
         padding: 5px 10px;
         border-radius: 5px;
     }
+}
+.infooter-wrapper {
+    width: 97%;
+    height: 100%; //      line-height: 40px;
+    margin: 0 auto; //      background-color: @bgColor;
+    padding-top: 10px; //      position: relative;
 }
 .go-tutorDetail {
     color: blue;
@@ -240,21 +237,19 @@ p[name = "remainder"] {
     justify-content: space-around;
     margin-top: 10px; //  .tb;
 }
-@imgHeight: 100px;
+@imgHeight: 90px;
 .img-panel {
     text-align: center;
     font-size: 12px; //  .tb;
     width: @imgHeight;
     height: @imgHeight+40px;
     position: relative;
-    margin-bottom: 10px;
-//  .tb;
+    margin-bottom: 10px; //  .tb;
     &>div {
         background-color: @bgColor;
         height: @imgHeight;
         width: @imgHeight;
-        margin-bottom: 10px;
-//      .tb;
+        margin-bottom: 10px; //      .tb;
     }
     input {
         width: @imgHeight;
@@ -262,10 +257,9 @@ p[name = "remainder"] {
         line-height: (@imgHeight)-10px;
         position: absolute;
         top: 0;
-        left:0;
+        left: 0;
         z-index: 100;
-        opacity: 0;
-//      .tb;
+        opacity: 0; //      .tb;
     }
 }
 .add-file-wrapper {
@@ -286,8 +280,7 @@ p[name = "remainder"] {
 }
 .clap {
     height: 10px;
-    background-color: @bgColor;
-//  width:120%;
+    background-color: @bgColor; //  width:120%;
 }
 .text-info {
     padding: 0 20px;
@@ -305,38 +298,31 @@ p[name = "remainder"] {
         line-height: 30px;
     }
 }
-
-.confirmIdentify{
-         background-color: #642170 !important;
-        font-size: 14px !important;
-        padding: 5px 16px !important;
-        border-radius: 12px !important;
-        width: 100% !important;
-        line-height: 30px !important;
-        color: #fff !important;
+.confirmIdentify {
+    background-color: #642170 !important;
+    font-size: 14px !important;
+    padding: 5px 16px !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    line-height: 30px !important;
+    color: #fff !important;
 }
-
-
 /*----------page 3 -----------Register-----------------*/
-#registerForm{
-    *{
+#registerForm {
+    * {
         .tb;
     }
     .tb;
-    padding:20px 0;
-    margin-top:@headHeight;
+    padding: 20px 0;
+    margin-top: @headHeight;
     text-align: center;
-    input,textarea{
-        width:100%;
+    input,
+    textarea {
+        width: 100%;
         display: block;
-        margin:10px auto;
+        margin: 10px auto;
         line-height: 30px;
         border-radius: 5px;
-        padding:5px;
+        padding: 5px;
     }
 }
-
-
-
-
-
