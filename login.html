@@ -18,15 +18,17 @@
 
 	<body>
 		<div class="wrapper">
-			<a class="homePage" href="index.html"> <i class="fa fa-home" aria-hidden="true"></i></a>
+			<!--<a class="homePage" href="index.html"> <i class="fa fa-home" aria-hidden="true"></i></a>-->
+			<a class="homePage" href="index.html"><i class="fa fa-angle-left" aria-hidden="true"> 首页</i></a>
+
 			<div class="logo"></div>
 			<div class="footer-wrapper">
 				<div class="infooter-wrapper">
 					<p class="tagline">打造全厦门最好的家教服务平台</p>
 					<form id="loginForm">
-						<div class="warning">请重新输入</div>
+						<div class="warning"></div>
 
-						<input type="text" value="13559024715" name="cellPhone" id="cellPhone" /><br />
+						<input type="text" value="" name="cellPhone" id="cellPhone" placeholder="请输入您的手机号" /><br />
 						<div class="pwd-wrapper">
 							<i class="fa fa-eye togglePwdView" aria-hidden="true"></i>
 							<input name="pwd" type="password" placeholder="请输入您的密码" id="pwd" />
@@ -43,11 +45,9 @@
 			</div>
 		</div>
 		<script src="js/jquery-3.1.1.js"></script>
-		<script src="js/mobile-util.js"></script>
+		<!--<script src="js/mobile-util.js"></script>-->
 		<script src="js/js.cookie.js"></script>
-
 		<script src="js/login.js"></script>
-		<!--<script src="js/register.js"></script>-->
 
 		<script>
 			$(document).ready(function() {

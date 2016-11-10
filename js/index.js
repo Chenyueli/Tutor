@@ -57,6 +57,7 @@ $(document).ready(function() {
 
 	(function init() {
 		var $goIdentify = $(".go-identify").eq(0),
+			$pubReq = $(".pub-requirement");
 			$uCenter = $(".user-center").eq(0),
 			$gotDetai = $(".go-tutorDetail").eq(0),
 			$goBack = $(".goBack").eq(0),
@@ -101,6 +102,9 @@ $(document).ready(function() {
 		$uCenter.click(function() {
 			window.location = "login.html";
 		});
+		$pubReq.click(function(){
+			window.location = "pubRequirement.html";
+		})
 		$gotDetai.click(function() {
 			window.location = "tutorDetail.html";
 		});

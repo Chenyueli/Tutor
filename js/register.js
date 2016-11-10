@@ -140,7 +140,7 @@ $(document).ready(function() {
 			$pwsVisibled = $(".togglePwdView").eq(0);
 
 		//交互优化
-		$("input").focus(function() {
+		$("input,textarea").focus(function() {
 			this.select();
 		});
 		$("#cellPhone").blur(function(e) {
@@ -151,6 +151,12 @@ $(document).ready(function() {
 			}
 		});
 		//必要事件绑定
+
+		$("role-wrapper button").click(function(e) {
+			e.preventDefault();
+
+		})
+
 		$goBack.click(function() {
 			if($(this).hasClass("go-login")) {
 				window.location = "login.html";
@@ -158,8 +164,8 @@ $(document).ready(function() {
 				$(".register-1").removeClass("hidden");
 				$(".register-2").addClass("hidden");
 				$(".goBack").addClass("go-login");
-				
-//				$("header>p").text("> 登录");
+
+				//				$("header>p").text("> 登录");
 
 			}
 		});
@@ -179,9 +185,9 @@ $(document).ready(function() {
 				//验证通过，进入下一页
 				$(".register-1").addClass("hidden");
 				$(".register-2").removeClass("hidden");
-//				$("header>p").text(">上一步");
+				//				$("header>p").text(">上一步");
 				$(".goBack").removeClass("go-login");
-				$(document.getElementsByTagName("body")).css("background-image" ,"url('img/bgRegister.jpg')");
+				$(document.getElementsByTagName("body")).css("background-image", "url('img/bgRegister.jpg')");
 			}
 		});
 
@@ -245,7 +251,30 @@ $(document).ready(function() {
 			};
 
 		});
+		$(".role-wrapper span").click(function() {
+			$(this).addClass("active")
+				.siblings().removeClass("active");
+			$(".mask,.role-wrapper").hide();
+			var role = $(this).text();
+			if(role == "学生") {
+				$(".rteacher").hide();
+			} else if(role == "老师") {
+				$(".rstudent").hide();
+			}
+		});
 
+		$(".role-wrapper button").click(function(e) {
+				var role = $(".role-wrapper .active").text();
+				if(role == "学生") {
+					$(".rteacher").hide();
+				} else if(role == "老师") {
+					$(".rstudent").hide();
+				}
+				$(".mask,.role-wrapper").hide();
+			})
+			//		$cellPhone.focus();
+
+		//	$("#registerForm").css("opacity","0");
 	})();
 
 })

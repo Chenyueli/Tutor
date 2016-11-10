@@ -8,8 +8,6 @@
     box-sizing: border-box;
     margin: 0;
     border: 0;
-//  font-family: "Microsoft YaHei" ;
-    
 }
 .hidden {
     display: none !important;
@@ -19,9 +17,8 @@ body {
     background-attachment: fixed;
     background-repeat: none;
     background-size: 100%;
-    font-family: "Microsoft YaHei" ;
-    
-
+    //  font-family: "Microsoft YaHei";
+    font-family: "SimHei";
 }
 .wrapper {}
 /*---------------------Header-----------------*/
@@ -40,6 +37,8 @@ header {
         left: 10px; //      right: 10px; //      .tb;
     }
     & > h2 {
+        //      font-family: "Microsoft YaHei ";
+        font-family: "SimHei";
         text-align: center;
     }
 }
@@ -124,11 +123,13 @@ nav {
     line-height: 24px; //  position:relative;
     .sexuality {
         color: #FEA531;
+        font-size: 10px;
     }
     .tPay {
         float: right;
         color: #FEA531;
         font-weight: 600;
+        font-size: 14px;
     }
     .tName {
         margin-right: 4px;
@@ -138,6 +139,12 @@ nav {
     }
     .tGrade-wrapper {
         background-color: #EBEBEB;
+    }
+    .tIntro {
+        color: #8B8878; //      font-family:"STSong ";
+    }
+    .tCourse {
+        //      font-family:"STSong ";
     }
 }
 .fa-vimeo {
@@ -228,6 +235,11 @@ nav {
 }
 .reserve {
     font-size: 20px !important;
+    background-color: #406C5F;
+    padding: 5px 20px;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: -10px;
 }
 .submit-reserve:extend(.reserve){}
 .in-reservation-Form {
@@ -235,17 +247,23 @@ nav {
     padding: 20px;
     .tutorInfoID {}
     & >.description {
-        height: 400px; //      .tb;
+        height: 440px; //      .tb;
+        @media screen and (min-width: 370px) {
+            height: 540px;
+        }
         background-color: @bgColor;
         margin-top: 10px;
         padding: 5px;
         text-indent: 2em;
     }
+    p{
+        line-height: 24px;
+    }
     textarea {
         border: 2px solid #78D9BD;
         display: block;
         width: 80%;
-        margin: 0 auto;
+        margin: 20px auto;
         height: 250px;
     }
 }
@@ -350,6 +368,55 @@ p[name = "remainder"] {
     color: #fff !important;
 }
 /*----------page 3 -----------Register-----------------*/
+.mask {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #D6E9F1;
+    opacity: 0.8;
+    z-index: 1000;
+}
+.role-wrapper {
+    //  * {
+    //      .tb;
+    //  }
+    //  .tb;
+    width: 300px; //  height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -100px;
+    display: block;
+    z-index: 1001;
+    text-align: center;
+    p {
+        color: #65BEA9;
+        text-align: left;
+    }
+    span {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: inline-block;
+        width: 50%; //      height: ;
+        line-height: 90px;
+        text-align: center;
+        background-color: #65BEA9;
+        color: #fff;
+        border-radius: 5px;
+    }
+    .active {
+        background-color: #FCBDB4;
+    }
+    button {
+        width: 100px;
+        background-color: #FCBDB4;
+        color: white;
+        padding: 10px 20px; //      margin:0 auto;
+        border-radius: 5px;
+    }
+}
 @inputHeight: 38px;
 #registerForm {
     //      * {
@@ -357,13 +424,12 @@ p[name = "remainder"] {
     //      }
     //  .tb;
     padding-top: 20px;
-    margin-top: @headHeight;
-    text-align: center;
+    margin-top: @headHeight; //  text-align: center;
     color: #fff;
     input,
     textarea,
     .register {
-        text-align: center;
+        //      text-align: center;
         //      margin:0 20px;
         width: 80%;
         display: block;
@@ -397,6 +463,12 @@ p[name = "remainder"] {
     input[name="pwd"] {
         margin-top: 50px !important;
     }
+    .tips {
+        font-size: 10px;
+        color: red;
+        margin-top: -10px;
+        margin-left: 10%;
+    }
 }
 .verNum-wrapper {
     position: relative; //      width: 80%;
@@ -415,6 +487,51 @@ p[name = "remainder"] {
     color: #fff; //  z-index: 100;
     //  margin:0 !important;
 }
+.rstudent {
+    span {
+        margin-left: 10%;
+    }
+}
 .warning {
     color: #f00;
+}
+/*----------page 4 -----------Demand-----------------*/
+#demand {
+    * {
+        //      .tb;
+    }
+    position: relative;
+    top: @headHeight;
+    background-color: @bgColor;
+    padding: 30px;
+    margin: 20px;
+    p {
+        margin-bottom: 10px;
+        font-size: 14px;
+        span {
+            color: #0000FF;
+        }
+    }
+    input {
+        color: #3E6C5F;
+        margin: 20px 0;
+        background-color: #9ED6BD;
+        width: 100%; //      line-height: 30px;
+        border-radius: 5px;
+        padding: 16px;
+    }
+    button {
+        background-color: #3E6C5F;
+        width: 100px;
+        padding: 10px 20px;
+        margin-top: 70px;
+        border-radius: 5px;
+        color: #fff;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @media screen and (min-width: 370px) {
+        padding-bottom: 120px;
+    }
 }

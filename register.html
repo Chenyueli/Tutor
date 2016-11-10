@@ -22,9 +22,16 @@
 	</head>
 
 	<body>
+		<div class = "mask"></div>
+		<div class="role-wrapper">
+				<p>请选择您的注册身份:</p>
+				<div><span class="active">学生</span><span>老师</span></div>
+				<!--<button>确定</button>-->
+		</div>
 		<div class="wrapper">
 			<header>
-				<p class="goBack go-login"> <i class="fa fa-angle-left" aria-hidden="true"></i> </p>
+				<p class="goBack go-login"> <i class="fa fa-angle-left" aria-hidden="true"> 返回</i> </p>
+				<!--<p class="goBack go-login">> 首页</p>-->
 				<h2>手机注册</h2>
 			</header>
 			<div>
@@ -32,9 +39,9 @@
 
 					<section class="register-1">
 						<div>
-							<input name="cellPhone" type="text" placeholder="+86 请输入您的手机号" value="18817316609" id="cellPhone" />
+							<input name="cellPhone" type="text" placeholder="+86 请输入您的手机号" value="" id="cellPhone" />
 							<!--<div class="verNum-wrapper">-->
-							<input name="verNum" type="text" placeholder="请输入短信验证码" value="1234" />
+							<input name="verNum" type="text" placeholder="请输入短信验证码" value="" />
 							<input id="sendMsg" type="button" value="发送验证短信" />
 							<!--</div>-->
 						</div>
@@ -49,16 +56,36 @@
 							<div class="footer-wrapper">
 								<div class="infooter-wrapper"><input class="nextPage" type="button" value="下一步" /></div>
 							</div>
-							
+
 						</div>
 					</section>
 
 					<section class="register-2 hidden">
-						<input name="realName" type="text" placeholder="请输入您的姓名" value="陈毛毛" />
-						<input name="address" type="text" placeholder="请输入您的地址" value="乌托邦大学" />
-						<textarea name="certificate">请输入你的学历介绍</textarea>
-						<textarea name="expericence">请输入您的教学经验</textarea>
-						<textarea name="introduce">请输入您的自我介绍</textarea>
+						<div class="rteacher">
+							<!--<span>姓名</span>-->
+							<input name="realName" type="text" placeholder="请输入您的姓名" value="" />
+							<!--<span>地址</span>-->
+							<input name="address" type="text" placeholder="请输入您的地址" value="" />
+							<!--<div class="teacher">-->
+							<!--<span>学历介绍</span>-->
+							<textarea rows="2" name="certificate" placeholder="请输入你的学历介绍"></textarea>
+							<!--<span>教学经验</span>-->
+							<textarea rows="2" name="expericence" placeholder="请输入您的教学经验"></textarea>
+							<!--<span>自我介绍</span>-->
+							<textarea rows="2" name="introduce" placeholder="请输入您的自我介绍"></textarea>
+							<!--</div>-->
+							<p class="tips">* 包括联系方式、地点、时间等，收到后会电话确认</p>
+
+						</div>
+						<div class="rstudent">
+							<span>姓名</span>
+							<input name="realName" type="text" placeholder="请输入您的姓名" value="陈毛毛" />
+							<span>地址</span>
+							<input name="address" type="text" placeholder="请输入您的地址" value="乌托邦大学" />
+							<span>自我介绍</span>
+							<textarea rows="4" name="introduce">请输入您的自我介绍</textarea>
+							<p class="tips">* 包括联系方式、地点、时间等，收到后会电话确认</p>
+						</div>
 						<p class="warning"></p>
 						<div class="footer-wrapper">
 							<div class="infooter-wrapper"><button class="register">注册</button></div>

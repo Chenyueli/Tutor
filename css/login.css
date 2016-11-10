@@ -12,17 +12,20 @@ a {
   color: #fff;
   position: absolute;
   top: 10px;
-  right: 10px;
+  left: 10px;
+  text-decoration: none;
+  font-size: 14px;
 }
 body {
   background: url("../img/bgLogin.jpg");
   background-attachment: fixed;
   background-repeat: none;
   background-size: 100%;
+  font-family: "Times";
   font-size: 16px;
 }
 .logo {
-  margin: 30px auto 130px;
+  margin: 70px auto 110px auto;
   width: 100px;
   height: 100px;
   background: url("../img/logo1.png");
@@ -31,21 +34,24 @@ body {
 }
 .tagline {
   color: #fff;
-  margin-bottom: 30px;
-  font-size: 14px;
+  margin-bottom: 50px;
+  font-size: 16px;
 }
 #cellPhone,
 #pwd {
   height: 38px;
-  width: 280px;
+  width: 90%;
   border-radius: 15px;
   padding: 10px;
   text-align: center;
   color: #7B378C;
 }
+#pwd {
+  width: 100%;
+}
 .pwd-wrapper {
   position: relative;
-  width: 280px;
+  width: 90%;
   margin: 20px auto 0;
 }
 .fa-eye {
@@ -72,7 +78,7 @@ body {
 .go-register {
   background-color: #82cfc7;
   border-radius: 5px;
-  width: 100px;
+  width: 120px;
   height: 30px;
   padding: 5px;
   color: #fff;

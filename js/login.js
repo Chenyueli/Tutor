@@ -98,6 +98,7 @@ $(document).ready(function() {
 				var data = $("#loginForm").serialize();
 				data = decodeURIComponent(data, true); //解决中文乱码
 				alert(data);
+				window.location = "index.html";
 			}
 		});
 
@@ -105,8 +106,7 @@ $(document).ready(function() {
 			e.preventDefault();
 			self.location = 'register.html';
 		});
-
-		//		$cellPhone.focus();
-
+		
+	
 	})();
 });
