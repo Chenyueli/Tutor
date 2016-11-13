@@ -1,0 +1,380 @@
+@charset "utf-8";
+.tb {
+  border: 1px solid red;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+}
+.hidden {
+  display: none !important;
+}
+body {
+  background: url("../img/bg.jpg");
+  background-attachment: fixed;
+  background-repeat: none;
+  background-size: 100%;
+}
+/*---------------------Header-----------------*/
+header {
+  background-color: #A3DBC2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  line-height: 50px;
+  background-color: #ffffff;
+  z-index: 100;
+}
+header > .goBack {
+  position: fixed;
+  width: 50px;
+  left: 5px;
+  right: 10px;
+}
+header > h2 {
+  text-align: center;
+}
+.fa-user {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  color: #82cfc7;
+  font-size: 24px;
+}
+.userPanel {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  background-color: #458B74;
+  color: #fff;
+  width: 100px;
+  padding: 5px;
+  text-align: center;
+  line-height: 28px;
+  border-radius: 5px;
+}
+nav {
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #ffffff;
+  display: flex;
+  z-index: 10;
+}
+nav > a {
+  margin-bottom: 10px;
+  text-align: center;
+  flex: 1;
+  width: 50%;
+  color: #000;
+}
+nav span {
+  display: inline-block;
+  padding: 0 20px;
+  border-radius: 8px;
+}
+.active {
+  background-color: #EBEBEB;
+}
+/*---------------------content-wapper-----------------*/
+.home-content {
+  position: relative;
+  top: 85px;
+  padding-top: 5px;
+}
+.home-content > section {
+  width: 100%;
+  margin-top: 5px;
+}
+#teacher-Info {
+  padding: 0 8px;
+}
+.teacher {
+  margin-top: 10px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.tImg {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+.tInfo {
+  padding: 10px;
+  flex: 3;
+  line-height: 24px;
+}
+.tInfo .sexuality {
+  color: #FEA531;
+}
+.tInfo .tPay {
+  float: right;
+  color: #FEA531;
+  font-weight: 600;
+}
+.tInfo .tName {
+  margin-right: 4px;
+}
+.tInfo .tCourse span {
+  margin-right: 5px;
+}
+.tInfo .tGrade-wrapper {
+  background-color: #EBEBEB;
+}
+.fa-vimeo {
+  position: absolute;
+  top: 0;
+  color: #FEA531;
+}
+#tutoring-Info {
+  margin: 8px auto 0;
+}
+.in-tutoring-Info {
+  background-color: #ffffff;
+  width: 97%;
+  height: 520px;
+  margin: 0 auto;
+  padding: 10px;
+  overflow: scroll;
+}
+.tutor-item {
+  display: flex;
+  justify-content: space-around;
+  height: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.tutor-item p[name="address"] {
+  flex: 0.7;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.footer-wrapper {
+  position: fixed;
+  width: 100%;
+  bottom: 20px;
+  text-align: center;
+  height: 50px;
+}
+.footer-wrapper button {
+  background-color: #406B5F;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.infooter-wrapper {
+  width: 97%;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+.go-tutorDetail {
+  color: blue;
+}
+/*---------page 3------------Tutoring Detail--------------------*/
+#tutoring-detail {
+  margin-top: 50px;
+}
+#tutoring-detail .infoTitle {
+  line-height: 30px;
+  padding: 0 10px;
+}
+#tutoring-detail .releaseTime {
+  float: right;
+  font-size: 14px;
+}
+.infoItem {
+  background-color: #ffffff;
+  margin-bottom: 3px;
+  padding: 2px 0;
+  display: flex;
+  align-items: center;
+  /*垂直居中*/
+}
+.infoItem :first-child {
+  color: gray;
+  flex: 1;
+  text-align: right;
+  margin-right: 16px;
+}
+.infoItem :nth-child(2) {
+  flex: 2.5;
+}
+.reserve,
+.submit-reserve {
+  font-size: 20px !important;
+}
+.in-reservation-Form {
+  margin-top: 50px;
+  padding: 20px;
+}
+.in-reservation-Form > .description {
+  height: 400px;
+  background-color: #ffffff;
+  margin-top: 10px;
+  padding: 5px;
+  text-indent: 2em;
+}
+.in-reservation-Form textarea {
+  border: 2px solid #78D9BD;
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  height: 250px;
+}
+/*----------page 2 -----------Identity Authentication-----------------*/
+#identity-authentication {
+  position: relative;
+  top: 50px;
+  padding-top: 5px;
+}
+#identity-authentication > section {
+  width: 100%;
+  margin-top: 5px;
+}
+.img-info {
+  padding: 0 10px;
+  color: #fff;
+  margin-top: 0;
+}
+p[name="remainder"] {
+  background-color: #3E3554;
+  color: #fff;
+  padding: 5px 10px;
+  line-height: 25px;
+  position: relative;
+  top: -5px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.flex-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.img-panel {
+  text-align: center;
+  font-size: 12px;
+  width: 90px;
+  height: 130px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.img-panel > div {
+  background-color: #ffffff;
+  height: 90px;
+  width: 90px;
+  margin-bottom: 10px;
+}
+.img-panel input {
+  width: 90px;
+  height: 90px;
+  line-height: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  opacity: 0;
+}
+.add-file-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.fa-plus {
+  color: #000000;
+  font-size: 20px;
+  display: block;
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  width: 20px;
+  height: 20px;
+}
+.clap {
+  height: 10px;
+  background-color: #ffffff;
+}
+.text-info {
+  padding: 0 20px;
+}
+.text-info > label {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  background-color: #ffffff;
+  line-height: 30px;
+  font-size: 14px;
+  padding: 0 16px;
+  border-radius: 16px;
+}
+.text-info input {
+  line-height: 30px;
+}
+.confirmIdentify {
+  background-color: #642170 !important;
+  font-size: 14px !important;
+  padding: 5px 16px !important;
+  border-radius: 12px !important;
+  width: 100% !important;
+  line-height: 30px !important;
+  color: #fff !important;
+}
+/*----------page 3 -----------Register-----------------*/
+#registerForm {
+  border: 1px solid red;
+  padding-top: 20px;
+  margin-top: 50px;
+  text-align: center;
+  color: #fff;
+}
+#registerForm * {
+  border: 1px solid red;
+}
+#registerForm input,
+#registerForm textarea {
+  width: 80%;
+  display: block;
+  margin: 10px auto;
+  line-height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+}
+#registerForm .pwd-wrapper {
+  position: relative;
+  width: 280px;
+  margin: 20px auto 0;
+}
+#registerForm .fa-eye {
+  font-size: 16px;
+  position: absolute;
+  right: 5px;
+  top: 11px;
+  color: #82cfc7;
+}
+.verNum-wrapper {
+  position: relative;
+  line-height: 30px;
+}
+#sendMsg {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  width: 100px;
+  line-height: 30px;
+  padding: 0 5px;
+  border-radius: 5px;
+  background-color: #48B3A6;
+  color: #fff;
+}
+.warning {
+  color: #f00;
+}

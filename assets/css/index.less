@@ -1,0 +1,399 @@
+@charset "utf-8";
+@bgColor: #fff;
+@headHeight: 50px;
+.tb {
+    border: 1px solid red;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+}
+.hidden {
+    display: none !important;
+}
+body {
+    background: url("../assets/img/bg.jpg");
+    background-attachment: fixed;
+    background-repeat: none;
+    background-size: 100%;
+}
+.wrapper {}
+/*---------------------Header-----------------*/
+header {
+    background-color: #A3DBC2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: @headHeight;
+    background-color: @bgColor;
+    z-index: 100;
+    & > .goBack {
+        position: fixed;
+        width: 50px;
+        left: 5px;
+        right: 10px; //      .tb;
+    }
+    & > h2 {
+        text-align: center;
+    }
+}
+.fa-user {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    color: #82cfc7;
+    font-size: 24px;
+}
+.userPanel {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    background-color: #458B74;
+    color: #fff;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 5px;
+}
+nav {
+    position: fixed;
+    top: @headHeight;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: @bgColor;
+    display: flex; //  z-index: 100;
+    //  padding-bottom: 10px;
+    //  margin-bottom: 10px;
+    //  .tb;
+    z-index: 10;
+    & > a {
+        margin-bottom: 10px;
+        text-align: center;
+        flex: 1;
+        width: 50%;
+        color: #000;
+    }
+    span {
+        display: inline-block;
+        padding: 0 20px;
+        border-radius: 8px;
+    }
+}
+.active {
+    background-color: #EBEBEB;
+}
+/*---------------------content-wapper-----------------*/
+.home-content {
+    position: relative;
+    top: 85px;
+    padding-top: 5px; //  .tb;
+    & > section {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+#teacher-Info {
+    padding: 0 8px;
+}
+.teacher {
+    margin-top: 10px;
+    background-color: @bgColor;
+    display: flex;
+    justify-content: left;
+    align-items: center; //    .tb;
+}
+.tImg {
+    //  width:100px;
+    //  height: 100px;
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+.tInfo {
+    //  margin-left:20px;
+    padding: 10px;
+    flex: 3;
+    line-height: 24px; //  position:relative;
+    .sexuality {
+        color: #FEA531;
+    }
+    .tPay {
+        float: right;
+        color: #FEA531;
+        font-weight: 600;
+    }
+    .tName {
+        margin-right: 4px;
+    }
+    .tCourse span {
+        margin-right: 5px;
+    }
+    .tGrade-wrapper {
+        background-color: #EBEBEB;
+    }
+}
+.fa-vimeo {
+    position: absolute;
+    top: 0;
+    color: #FEA531;
+}
+#tutoring-Info {
+    //  overflow: hidden;
+    margin: 8px auto 0;
+}
+.in-tutoring-Info {
+    background-color: @bgColor;
+    width: 97%;
+    height: 520px;
+    margin: 0 auto;
+    padding: 10px;
+    overflow: scroll;
+}
+.tutor-item {
+    display: flex;
+    justify-content: space-around;
+    height: 20px; //  .tb;
+    margin-bottom: 10px;
+    text-align: center;
+    p[name= "address"] {
+        //     .tb;
+        flex: 0.7;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+.footer-wrapper {
+    //  .tb;
+    position: fixed;
+    width: 100%;
+    bottom: 20px;
+    text-align: center;
+    height: 50px; //  background-color: @bgColor;
+    button {
+        background-color: #406B5F;
+        color: #fff; //      height: 25px;
+        font-size: 12px;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+}
+.infooter-wrapper {
+    width: 97%;
+    height: 100%; //      line-height: 40px;
+    margin: 0 auto; //      background-color: @bgColor;
+    padding-top: 10px; //      position: relative;
+}
+.go-tutorDetail {
+    color: blue;
+}
+/*---------page 3------------Tutoring Detail--------------------*/
+#tutoring-detail {
+    margin-top: @headHeight;
+    .infoTitle {
+        line-height: 30px;
+        padding: 0 10px;
+    }
+    .releaseTime {
+        float: right;
+        font-size: 14px;
+    }
+}
+.infoItem {
+    background-color: @bgColor;
+    margin-bottom: 3px;
+    padding: 2px 0;
+    display: flex;
+    align-items: center;
+    /*垂直居中*/
+     :first-child {
+        color: gray;
+        flex: 1;
+        text-align: right;
+        margin-right: 16px;
+    }
+     :nth-child(2) {
+        flex: 2.5; //     
+    }
+}
+.reserve {
+    font-size: 20px !important;
+}
+.submit-reserve:extend(.reserve){}
+.in-reservation-Form {
+    margin-top: @headHeight; //  .tb;
+    padding: 20px;
+    .tutorInfoID {}
+    & >.description {
+        height: 400px; //      .tb;
+        background-color: @bgColor;
+        margin-top: 10px;
+        padding: 5px;
+        text-indent: 2em;
+    }
+    textarea {
+        border: 2px solid #78D9BD;
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        height: 250px;
+    }
+}
+/*----------page 2 -----------Identity Authentication-----------------*/
+#identity-authentication {
+    position: relative;
+    top: @headHeight;
+    padding-top: 5px; //  .tb;
+    & > section {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+.img-info {
+    padding: 0 10px;
+    color: #fff;
+    margin-top: 0; //  .tb;
+}
+p[name = "remainder"] {
+    background-color: #3E3554;
+    color: #fff; //  text-space-collapse: 1em;
+    padding: 5px 10px;
+    line-height: 25px;
+    position: relative;
+    top: -5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.flex-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px; //  .tb;
+}
+@imgHeight: 90px;
+.img-panel {
+    text-align: center;
+    font-size: 12px; //  .tb;
+    width: @imgHeight;
+    height: @imgHeight+40px;
+    position: relative;
+    margin-bottom: 10px; //  .tb;
+    &>div {
+        background-color: @bgColor;
+        height: @imgHeight;
+        width: @imgHeight;
+        margin-bottom: 10px; //      .tb;
+    }
+    input {
+        width: @imgHeight;
+        height: @imgHeight;
+        line-height: (@imgHeight)-10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        opacity: 0; //      .tb;
+    }
+}
+.add-file-wrapper {
+    //  opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.fa-plus {
+    color: #000000;
+    font-size: 20px;
+    display: block;
+    position: absolute;
+    top: (@imgHeight/2) - 10px;
+    left: (@imgHeight/2) - 10px;
+    width: 20px;
+    height: 20px;
+}
+.clap {
+    height: 10px;
+    background-color: @bgColor; //  width:120%;
+}
+.text-info {
+    padding: 0 20px;
+    &>label {
+        display: block;
+        width: 100%; //      .tb;
+        margin: 10px auto;
+        background-color: @bgColor;
+        line-height: 30px;
+        font-size: 14px;
+        padding: 0 16px;
+        border-radius: 16px;
+    }
+    input {
+        line-height: 30px;
+    }
+}
+.confirmIdentify {
+    background-color: #642170 !important;
+    font-size: 14px !important;
+    padding: 5px 16px !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    line-height: 30px !important;
+    color: #fff !important;
+}
+/*----------page 3 -----------Register-----------------*/
+@inputHeight: 38px;
+#registerForm {
+        * {
+            .tb;
+        }
+    .tb;
+    padding-top: 20px;
+    margin-top: @headHeight;
+    text-align: center;
+    color: #fff;
+    input,
+    textarea {
+        //      margin:0 20px;
+        width: 80%;
+        display: block;
+        margin: 10px auto;
+        height:40px;
+        line-height: 30px;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    .pwd-wrapper {
+        //  .tb;
+        position: relative;
+        width: 280px;
+        margin: 20px auto 0;
+    }
+    .fa-eye {
+        font-size: 16px;
+        position: absolute;
+        right: 5px;
+        top: (@inputHeight/2) - 8px;
+        color: #82cfc7; //  .tb;
+    }
+}
+.verNum-wrapper {
+    position: relative; //      width: 80%;
+    line-height: 30px;
+}
+#sendMsg {
+    position: absolute;
+    top: 10px;right: 0;
+    width: 100px;
+    height: 40px;
+    line-height: 30px;
+    padding:0 5px;
+    border-radius: 5px;
+    background-color: #48B3A6;
+    color: #fff;
+}
+.warning {
+    color: #f00;
+}

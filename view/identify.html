@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width = device-width,initial-scale = 1">
+		<link href="../assets/css/font-awesome.min.css" rel="stylesheet">
+		<link href="../assets/css/index.css" rel="stylesheet">
+		<title>实名认证</title>
+		<style>
+			body {
+				background-image: url("../assets/img/bg_identify.jpg");
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<header>
+				<p class="goBack">> 返回</p>
+				<h2>实名认证</h2>
+				<i class="fa fa-user"></i>
+				<div class="userPanel hidden">
+					<p class="user-center">个人中心</p>
+					<p class="go-identify">用户认证</p>
+				</div>
+			</header>
+			<section id="identity-authentication" class="">
+				<p name="remainder">温馨提示：申请认证的姓名必须与实名认证的姓名一致，一经认证无法修改</p>
+				<section class="img-info">
+
+					<p>请按指定要求上传认证照片</p>
+					<div class="flex-wrapper">
+						<div class="img-panel" title="身份证">
+							<div class="show-img-panel">
+								<!--<img width='80px' height='80px' src="img/teacher1.png" />-->
+							</div>
+							<div class="add-file-wrapper">
+								<input type="file" name="file" onchange="validateImg(this)" id="idCard" />
+								<i class="fa fa-plus" aria-hidden="true"></i>
+							</div>
+							<span>身份证照片</span>
+						</div>
+
+						<div class="img-panel" title="学生证 ">
+							<div class="show-img-panel">
+							</div>
+							<div class="add-file-wrapper">
+								<input type="file" name="file" onchange="validateImg(this)" id="stuCard" />
+								<i class="fa fa-plus" aria-hidden="true"></i>
+							</div>
+							<span>学生证照片</span>
+						</div>
+						<div class="img-panel" title="其他证件">
+							<div class="show-img-panel">
+							</div>
+							<div class="add-file-wrapper">
+								<input type="file" name="file" onchange="validateImg(this)" id="description" />
+								<i class="fa fa-plus" aria-hidden="true"></i>
+							</div>
+							<span>其他说明</span>
+						</div>
+
+					</div>
+				</section>
+				<div class="clap"></div>
+				<section class="text-info">
+					<label>真实姓名：<input type = "text"></label>
+					<label>身份证号：<input type = "text"></label>
+					<label>学生证号：<input type = "text"></label>
+					<!--<button>确认审核</button>-->
+				</section>
+				<div class="footer-wrapper">
+					<div class="infooter-wrapper"><button class = "confirmIdentify">确认审核</button></div>
+				</div>
+			</section>
+		</div>
+		<script src="../assets/js/jquery-3.1.1.js"></script>
+		<script src="../assets/js/index.js"></script>
+		<script src="../assets/js/mobile-util.js"></script>
+		<script>
+		</script>
+
+	</body>
+
+</html>
