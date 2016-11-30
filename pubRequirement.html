@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width = device-width,initial-scale = 1">
 		<!--<link href="css/login.less" rel="stylesheet/less">-->
 		<!--<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>-->
-
+		<title>发布需求</title>
 		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/index.css" rel="stylesheet">
 	</head>
@@ -24,19 +24,60 @@
 				</div>
 			</header>
 			<div>
-				<section id="demand">
+				<section id="pub-demand">
 					<p>输入您的<span>联系方式</span>、需要的授课<span>地点</span>和<span>时间</span>。收到后我们会人工电话确认详情。</p>
-					<input name = "cellPhone"type = "text" value="输入您的联系电话" id = "cellPhone">
-					<input name = "address" type = "text" value="输入您需要的授课地点" />
-					<input name = "time" type = "text" value="输入您需要的授课时间"/>
-					<button>提交</button>
+					<form id="demand">
+
+						联系电话：
+						<input name="cellPhone" type="text" value="18559024715" id="cellPhone" required="true"> 授课地点：
+						<input name="address" type="text" value="思明区 演武小学附近" /> 授课时间：
+						<input name="time" type="text" value="周六 上午 10:00-12:00" />
+
+						<button>提交</button>
+					</form>
+
 				</section>
 			</div>
 		</div>
 		<script src="js/jquery-3.1.1.js"></script>
-		
+
 		<script src="js/index.js"></script>
-		
+		<script src="js/my.js"></script>
+		<!--<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>-->
+
+		<script>
+			;
+			(function() {
+				var $cellPhone = $("#demand input[name='cellPhone']");
+
+				$("#demand button").click(function(e) {
+					e.preventDefault();
+					var cellPhone = $cellPhone.val();
+					var result = validatemobile(cellPhone);
+					if(result !== true) {
+						alert(result);
+						$cellPhone.focus().after($("<p class = 'tips'>" + result + "</p>"));
+
+					} else {
+						var data = $("#demand").serialize();
+						data = decodeURIComponent(data, true); //解决中文乱码
+						alert(data);
+						alert("已成功发布需求，请保持电话畅通");
+						validatemobile()
+							//					$.ajax({
+							//						url: "",
+							//						type: "POST",
+							//						data: data,
+							//						success: function(rData) {
+							//							alert("已成功发布需求，请保持电话畅通");
+							//						}
+							//					});
+					}
+
+				});
+			})();
+		</script>
+
 	</body>
 
 </html>

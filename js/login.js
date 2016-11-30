@@ -28,7 +28,7 @@ $(document).ready(function() {
 		var cellPhone = $cellPhone.val(),
 			pwd = $pwd.val(),
 			role = $("[name='role']").filter(":checked").val();
-			alert(role);
+		//			alert(role);
 		var result = validatemobile(cellPhone);
 		if(result !== true) {
 			warning = result;
@@ -66,6 +66,7 @@ $(document).ready(function() {
 				this.value = pw;
 			}
 			this.select();
+			$pwsVisibled.show();
 		});
 
 		$pwsVisibled.click(function() {
@@ -79,26 +80,30 @@ $(document).ready(function() {
 			e.preventDefault();
 			var result = validateLogin();
 			if(result !== true) {
-				$warning.text(result);
+				alert(result);
 			} else {
+
 				//验证成功 , 发送登录请求
-				//						alert("ok");
+				var data = $("#loginForm").serialize();
+				data = decodeURIComponent(data, true); //解决中文乱码
+				alert(data);
+				Cookies.set(data.cellPhone,data.pwd);
+				window.location = "index.html";
 				var data = {
 					cellPhone: $cellPhone.val(),
 					pwd: $pwd.val(),
 					role: $("[name='role']").filter(":checked").val(),
-				}
+				};
+				//				$.post("/teacher/login", data, function(data) {
+				//					if(data.errno !== 0){
+				//						alert(data.errmsg);
+				//					}else{
 
-				console.log(data);
-				alert(data);
-//				$.post(url, data, function(data, textStatus, jqXHR) {
-//					$warning.html(data);
-//					Cookies.set(data.cellPhone,data.pwd);
-//				}, json);
-				var data = $("#loginForm").serialize();
-				data = decodeURIComponent(data, true); //解决中文乱码
-				alert(data);
-				window.location = "index.html";
+				//					Cookies.set(data.cellPhone,data.pwd);
+				//	                window.location = "index.html";
+				//					}
+
+				//				}, json);
 			}
 		});
 
@@ -106,7 +111,6 @@ $(document).ready(function() {
 			e.preventDefault();
 			self.location = 'register.html';
 		});
-		
-	
+
 	})();
 });

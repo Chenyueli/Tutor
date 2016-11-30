@@ -45,7 +45,7 @@ body {
     border-radius: 15px;
     padding: 10px;
     text-align: center;
-    color: #7B378C; //  .tb;
+//  color: #7B378C; //  .tb;
     //  box-shadow: 5px;;
 }
 #pwd:extend(#cellPhone){
@@ -57,12 +57,13 @@ body {
     width: 90%;
     margin: 20px auto 0;
 }
-.fa-eye {
-    font-size: 16px;
+.togglePwdView {
+    font-size: 14px;
     position: absolute;
     right: 5px;
     top: (@inputHeight/2) - 8px;
-    color: #82cfc7; //  .tb;
+//  color: #82cfc7; //  .tb;
+    opacity:0.5;
 }
 .warning {
     color: red;
@@ -101,4 +102,7 @@ label{
     width: 97%;
     height: 100%; //      line-height: 40px;
     margin: 0 auto; //      background-color: @bgColor;
+}
+.hidden{
+    display: none;
 }

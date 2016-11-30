@@ -18,37 +18,49 @@ $(document).ready(function() {
 	//发送验证短信
 	function sendMsg(e) {
 		var cellPhone = $("#cellPhone").val();
-		var data = {
-			cellPhone: cellPhone,
-		};
-		//	alert(data.cellPhone);
+		var result = validatemobile(cellPhone);
+		//		console.log(result);
+		if(result !== true) {
+			alert(result);
+		} else {
+			var data = {
+				cellPhone: cellPhone,
+			};
+			//	alert(data.cellPhone);
 
-		//发送成功测试代码
-		$(e.target).unbind("click");
-		sendTimer(2);
+			//发送成功测试代码
 
-		//	$.ajax({
-		//		type: "GET",
-		//		url: "main.php",
-		//		data: {
-		//			command: "sendMsg",
-		//			cellPhone: cellPhone,
-		//		},
-		//		dataType: "JSON",
-		//		success: function(data, textStatus) {
-		//			//请求成功；
-		//			$(e.target).unbind("click");
-		//			sendTimer(2);
-		//			
-		//		},
-		//		error: function(XMLHttpRequest, textStatus, errorThrown) {
-		//			alert("发送失败，请重新发送");
-		//			console.log(XMLHttpRequest);
-		//			console.log(textStatus);
-		//			console.log(errorThrown);
-		//
-		//		}
-		//	});
+			$(e.target).unbind("click");
+			sendTimer(5);
+
+			//	$.ajax({
+			//		url: "main.php",
+			//		type: "POST",
+			//		data: {
+			//			command: "sendMsg",
+			//			cellPhone: cellPhone,
+			//		},
+			//		dataType: "JSON",
+			//		success: function(data) {
+			//			var data = jQuery.parseJSON(data);
+			//			if(data.errno != 0) {
+			//				alert(data.errmsg);
+			//			} else {
+			//			//请求成功；
+			//			$(e.target).unbind("click");
+			//			sendTimer(5);	
+			//			}
+			//		},
+			//		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			//			alert("发送失败，请重新发送");
+			//			console.log(XMLHttpRequest);
+			//			console.log(textStatus);
+			//			console.log(errorThrown);
+			//
+			//		}
+			//	});
+		}
+
 	};
 
 	// 验证手机号码，返回 true / waring;
@@ -79,17 +91,16 @@ $(document).ready(function() {
 			verNum: $("#registerForm input[name='verNum']").val(),
 			pwd: $("#pwd").val(),
 			rePwd: $("#registerForm input[name='rePwd']").val(),
-			realName: $("#registerForm input[name='realName']").val(),
-			address: $("#registerForm input[name='address']").val(),
+			realName: $("#registerForm input[name='realName']").eq(0).val() || $("#registerForm input[name='realName']").eq(1).val(),
+			address: $("#registerForm input[name='address']").eq(0).val() || $("#registerForm input[name='address']").eq(1).val(),
 			certificate: $("textarea[name='certificate']").val(),
 			expericence: $("textarea[name='expericence']").val(),
-			introduce: $("textarea[name='introduce']").val(),
+			introduce: $("textarea[name='introduce']").eq(0).val() || $("textarea[name='introduce']").eq(1).val(),
 		};
 		var result = true;
 
-		Cookies.set("intRealCode", "1234");
 		//	alert(data.cellPhone);
-
+		Cookies.set("intRealCode", "1234");
 		//	alert(typeof data);
 		switch(intPageNum) {
 			case 1:
@@ -99,15 +110,11 @@ $(document).ready(function() {
 					//				alert(vResult);
 					$("#cellPhone").focus();
 					result = false;
-				} else if(Cookies.get("intRealCode") !== data.verNum) {
-					$warning.text("短信验证码错误，请重新输入");
-
-					//				alert("短信验证码错误，请重新输入");
+				} else if(!data.verNum) {
+					$warning.text("请输入短信验证码");
 					result = false;
 				} else if(data.pwd !== data.rePwd) {
 					$warning.text("密码不一致，请重新输入");
-
-					//				alert("密码不一致，请重新输入");
 					result = false;
 				} else {
 					result = true;
@@ -204,52 +211,24 @@ $(document).ready(function() {
 			data = decodeURIComponent(data, true); //解决中文乱码
 			alert(data);
 			if(validateRegMsg(2) === true) {
-
-				//发送成功测试
-				var rData = {
-					"errno": 0,
-					"errmsg": "ok",
-				}
-				var rData = {
-						"errno": 1,
-						"errmsg": "麻烦P一下图亲(づ￣3￣)づ╭❤～~",
-					}
-					//				alert(rData);
-					//注册成功
-				if(rData.errno === 1) {
-					alert(rData.errmsg);
-				} else {
-					var isGoIdentify = confirm("注册成功，是否前往验证身份？");
-					if(isGoIdentify) {
-						self.location = 'identify.html';
-					}
-				}
-
 				//				$.post(
-				//					"post1.php", data,
-				//					function(rData, textStatus) {
-				//						var rData = {
-				//							"errno": 0,
-				//							"errmsg": "ok",
-				//						}
-				//						var rData = {
-				//							"errno": 1,
-				//							"errmsg": "麻烦P一下图亲(づ￣3￣)づ╭❤～~",
-				//						}
-				//						alert(rData);
+				//					"/teacher/register", data,
+				//					function(rData) {
+				//						alert("");
 				//						//注册成功
 				//						if(rData.errno === 1) {
 				//							alert(fData.errmsg);
 				//						} else {
-				//							var isGoIdentify = confirm("注册成功，是否前往验证身份？");
-				//							if(isGoIdentify) {
-				//								self.location = 'identify.html';
-				//							}
+				var isGoIdentify = confirm("注册成功，是否前往验证身份？");
+				if(isGoIdentify) {
+					self.location = 'identify.html';
+				}else{
+					self.location = 'login.html';
+					
+				}
 				//						}
 				//					}, "json");
-
-			};
-
+			}
 		});
 		$(".role-wrapper span").click(function() {
 			$(this).addClass("active")

@@ -240,7 +240,7 @@ nav span {
   }
 }
 .in-reservation-Form p {
-  line-height: 24px;
+  line-height: px;
 }
 .in-reservation-Form textarea {
   border: 2px solid #78D9BD;
@@ -453,21 +453,21 @@ p[name="remainder"] {
   color: #f00;
 }
 /*----------page 4 -----------Demand-----------------*/
-#demand {
+#pub-demand {
   position: relative;
   top: 50px;
   background-color: #ffffff;
   padding: 30px;
   margin: 20px;
 }
-#demand p {
-  margin-bottom: 10px;
+#pub-demand p {
+  margin-bottom: 30px;
   font-size: 14px;
 }
-#demand p span {
-  color: #0000FF;
+#pub-demand p span {
+  font-weight: 600 ;
 }
-#demand input {
+#pub-demand input {
   color: #3E6C5F;
   margin: 20px 0;
   background-color: #9ED6BD;
@@ -475,7 +475,7 @@ p[name="remainder"] {
   border-radius: 5px;
   padding: 16px;
 }
-#demand button {
+#pub-demand button {
   background-color: #3E6C5F;
   width: 100px;
   padding: 10px 20px;
@@ -487,7 +487,10 @@ p[name="remainder"] {
   margin-right: auto;
 }
 @media screen and (min-width: 370px) {
-  #demand {
+  #pub-demand {
     padding-bottom: 120px;
   }
+}
+#pub-demand .tips {
+  color: red;
 }

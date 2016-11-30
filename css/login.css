@@ -44,7 +44,6 @@ body {
   border-radius: 15px;
   padding: 10px;
   text-align: center;
-  color: #7B378C;
 }
 #pwd {
   width: 100%;
@@ -54,12 +53,12 @@ body {
   width: 90%;
   margin: 20px auto 0;
 }
-.fa-eye {
-  font-size: 16px;
+.togglePwdView {
+  font-size: 14px;
   position: absolute;
   right: 5px;
   top: 11px;
-  color: #82cfc7;
+  opacity: 0.5;
 }
 .warning {
   color: red;
@@ -98,4 +97,7 @@ label {
   width: 97%;
   height: 100%;
   margin: 0 auto;
+}
+.hidden {
+  display: none;
 }
