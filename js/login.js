@@ -1,4 +1,5 @@
 ;
+var role = "";
 $(document).ready(function() {
 	var $cellPhone = $("#cellPhone"),
 		$pwd = $("#pwd"),
@@ -20,6 +21,26 @@ $(document).ready(function() {
 			return true;
 		}
 		return warning;
+	};
+
+	//检测登录
+	function testLogIn() {
+		var role = "";
+		console.log("role" + role);
+		role = decodeURI(window.location.href).split("?")[1];
+		console.log(role);
+		if(role !== undefined) {
+			$("header .user-center").text("切换用户");
+			if(role == "学生") {
+				$("header .pub-requirement").removeClass("hidden");
+			} else {
+				$("header .go-identify").removeClass("hidden");
+			};
+		} else {
+			console.log("未登录");
+			role = "";
+		}
+		return role;
 	};
 
 	//登录验证，返回 true /warning 
@@ -47,26 +68,41 @@ $(document).ready(function() {
 		var $logIn = $(".logIn").eq(0),
 			$pwsVisibled = $(".togglePwdView").eq(0),
 			$goRegister = $(".go-register").eq(0);
+		$goHomepage = $(".homePage");
 
 		//交互优化
 		$("input").focus(function() {
 			this.select();
 		});
-		$cellPhone.blur(function(e) {
-			var phoneNum = $(this).val();
-			var result = validatemobile(phoneNum);
-			if(result !== true) {
-				$warning.text(result);
-			}
+
+		// $cellPhone.blur(function(e) {
+		// 	var phoneNum = $(this).val();
+		// 	var result = validatemobile(phoneNum);
+		// 	if(result !== true) {
+		// 		$warning.text(result);
+
+		// 	}
+		// });
+		$goHomepage.click(function() {
+			window.location = "index.html?" + testLogIn();
+		});
+
+		$cellPhone.focus(function(e) {
+			$warning.text("");
+
 		});
 
 		$pwd.focus(function() {
-			var pw = Cookies.get($cellPhone.val());
-			if(pw !== null) {
-				this.value = pw;
-			}
+
+			// var pw = Cookies.get($cellPhone.val());
+			// if(pw !== undefined) {
+			// 	this.value = pw;
+			// }
 			this.select();
 			$pwsVisibled.show();
+		});
+		$pwd.blur(function() {
+			$pwsVisibled.hide();
 		});
 
 		$pwsVisibled.click(function() {
@@ -87,8 +123,10 @@ $(document).ready(function() {
 				var data = $("#loginForm").serialize();
 				data = decodeURIComponent(data, true); //解决中文乱码
 				alert(data);
-				Cookies.set(data.cellPhone,data.pwd);
-				window.location = "index.html";
+				Cookies.set(data.cellPhone, data.pwd);
+				var url = "index.html?" + $("[name='role']").filter(":checked").val();
+				alert(url);
+				window.location = url;
 				var data = {
 					cellPhone: $cellPhone.val(),
 					pwd: $pwd.val(),

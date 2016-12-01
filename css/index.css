@@ -32,10 +32,12 @@ header > .goBack {
   position: fixed;
   width: 50px;
   left: 10px;
+  font-family: "SimHei";
 }
 header > h2 {
   font-family: "SimHei";
   text-align: center;
+  font-weight: 400;
 }
 .fa-user {
   position: fixed;
@@ -55,6 +57,15 @@ header > h2 {
   text-align: center;
   line-height: 28px;
   border-radius: 5px;
+}
+.userPanel p {
+  font-size: 14px;
+}
+.userPanel a {
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+  font-size: 14px;
 }
 nav {
   position: fixed;
@@ -77,6 +88,8 @@ nav span {
   display: inline-block;
   padding: 0 20px;
   border-radius: 8px;
+  height: 32px;
+  line-height: 32px;
 }
 .active {
   background-color: #EBEBEB;
@@ -112,7 +125,8 @@ nav span {
   line-height: 24px;
 }
 .tInfo .sexuality {
-  color: #FEA531;
+  color: #EEB4B4;
+  color: #87CEFA;
   font-size: 10px;
 }
 .tInfo .tPay {
@@ -139,7 +153,7 @@ nav span {
   color: #FEA531;
 }
 #tutoring-Info {
-  margin: 8px auto 0;
+  margin: 16px auto 0;
 }
 .in-tutoring-Info {
   background-color: #ffffff;
@@ -153,7 +167,7 @@ nav span {
   display: flex;
   justify-content: space-around;
   height: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   text-align: center;
 }
 .tutor-item p[name="address"] {
@@ -165,14 +179,9 @@ nav span {
 .footer-wrapper {
   position: fixed;
   width: 100%;
-  bottom: 40px;
+  height: 30px;
+  bottom: 10px;
   text-align: center;
-  height: 50px;
-}
-.infooter-wrapper {
-  width: 97%;
-  height: 100%;
-  margin: 0 auto;
 }
 .more-tutor-info {
   margin-top: 20px;
@@ -191,11 +200,21 @@ nav span {
 }
 #tutoring-detail .infoTitle {
   line-height: 30px;
-  padding: 0 10px;
+  padding: 10px 10px 5px;
 }
 #tutoring-detail .releaseTime {
   float: right;
   font-size: 14px;
+}
+#tutoring-detail .footer-wrapper,
+#reservation-Form .footer-wrapper {
+  bottom: 10px !important;
+}
+@media screen and (min-width: 370px) {
+  #tutoring-detail .footer-wrapper,
+  #reservation-Form .footer-wrapper {
+    bottom: 20px !important;
+  }
 }
 .infoItem {
   background-color: #ffffff;
@@ -216,19 +235,20 @@ nav span {
 }
 .reserve,
 .submit-reserve {
-  font-size: 20px !important;
+  font-size: 18px !important;
   background-color: #406C5F;
-  padding: 5px 20px;
+  padding: 0 18px;
   color: #fff;
   border-radius: 5px;
-  margin-bottom: -10px;
+  font-family: "SimHei";
+  line-height: 30px;
 }
 .in-reservation-Form {
   margin-top: 50px;
   padding: 20px;
 }
 .in-reservation-Form > .description {
-  height: 440px;
+  height: 420px;
   background-color: #ffffff;
   margin-top: 10px;
   padding: 5px;
@@ -236,11 +256,11 @@ nav span {
 }
 @media screen and (min-width: 370px) {
   .in-reservation-Form > .description {
-    height: 540px;
+    height: 500px;
   }
 }
 .in-reservation-Form p {
-  line-height: px;
+  line-height: 24px;
 }
 .in-reservation-Form textarea {
   border: 2px solid #78D9BD;
@@ -258,6 +278,9 @@ nav span {
 #identity-authentication > section {
   width: 100%;
   margin-top: 5px;
+}
+#identity-authentication .footer-wrapper {
+  bottom: 30px;
 }
 .img-info {
   padding: 0 10px;
@@ -343,9 +366,11 @@ p[name="remainder"] {
   font-size: 14px !important;
   padding: 5px 16px !important;
   border-radius: 12px !important;
-  width: 100% !important;
+  width: 90% !important;
   line-height: 30px !important;
   color: #fff !important;
+  font-family: simhei;
+  font-weight: 300;
 }
 /*----------page 3 -----------Register-----------------*/
 .mask {
@@ -384,7 +409,7 @@ p[name="remainder"] {
   border-radius: 5px;
 }
 .role-wrapper .active {
-  background-color: #FCBDB4;
+  background-color: #76EEC6;
 }
 .role-wrapper button {
   width: 100px;
@@ -431,6 +456,12 @@ p[name="remainder"] {
 #registerForm input[name="pwd"] {
   margin-top: 50px !important;
 }
+#registerForm .warning {
+  font-size: 10px;
+  color: #CD6839;
+  margin-top: -10px;
+  margin-left: 10%;
+}
 #registerForm .tips {
   font-size: 10px;
   color: red;
@@ -457,15 +488,12 @@ p[name="remainder"] {
   position: relative;
   top: 50px;
   background-color: #ffffff;
-  padding: 30px;
+  padding: 28px;
   margin: 20px;
 }
 #pub-demand p {
   margin-bottom: 30px;
   font-size: 14px;
-}
-#pub-demand p span {
-  font-weight: 600 ;
 }
 #pub-demand input {
   color: #3E6C5F;
@@ -474,6 +502,8 @@ p[name="remainder"] {
   width: 100%;
   border-radius: 5px;
   padding: 16px;
+  font-family: "SimHei";
+  font-weight: 400;
 }
 #pub-demand button {
   background-color: #3E6C5F;
@@ -485,6 +515,8 @@ p[name="remainder"] {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  font-family: "SimHei";
+  font-weight: 400;
 }
 @media screen and (min-width: 370px) {
   #pub-demand {

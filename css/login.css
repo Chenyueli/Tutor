@@ -8,20 +8,20 @@
   border: 1px solid red;
 }
 a {
-  font-size: 20px;
   color: #fff;
   position: absolute;
-  top: 10px;
+  top: 20px;
   left: 10px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: 400;
 }
 body {
   background: url("../img/bgLogin.jpg");
   background-attachment: fixed;
   background-repeat: none;
   background-size: 100%;
-  font-family: "Times";
+  font-family: "SimHei";
   font-size: 16px;
 }
 .logo {
@@ -81,6 +81,9 @@ body {
   height: 30px;
   padding: 5px;
   color: #fff;
+  font-family: "SimHei";
+  font-weight: 400;
+  box-shadow: 5px 5px 5px 5px #A8A8A8;
 }
 label {
   color: #fff;

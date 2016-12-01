@@ -21,7 +21,8 @@ $(document).ready(function() {
 		var result = validatemobile(cellPhone);
 		//		console.log(result);
 		if(result !== true) {
-			alert(result);
+			//			alert(result);
+			$("#cellPhone").focus();
 		} else {
 			var data = {
 				cellPhone: cellPhone,
@@ -146,15 +147,39 @@ $(document).ready(function() {
 			$warning = $(".warning").eq(0),
 			$pwsVisibled = $(".togglePwdView").eq(0);
 
+		//检测身份
+		myurl = decodeURI(window.location.href);
+		//		decodeURI(myurl);
+		//		alert(myurl);
+		if(myurl.indexOf("?") != -1) {
+			var strs = myurl.split("?");
+			var role = strs[1];
+			$("header .user-center").text("切换用户");
+			if(role == "学生") {
+				$("header .pub-requirement").removeClass("hidden");
+			} else if(role == "教师") {
+				$("header .go-identify").removeClass("hidden");
+			} else if(role == "") {
+				console.log("未登录");
+			}
+			//			alert(role);
+		};
+
 		//交互优化
 		$("input,textarea").focus(function() {
 			this.select();
 		});
+		$("#cellPhone").focus(function(e) {
+			$warning.text("");
+		});
+
 		$("#cellPhone").blur(function(e) {
 			var phoneNum = $(this).val();
 			var result = validatemobile(phoneNum);
 			if(result !== true) {
-				$warning.text(result);
+
+				//				$(this).after(""+ result +"</p>");
+				$warning.text("*" + result);
 			}
 		});
 		//必要事件绑定
@@ -222,9 +247,9 @@ $(document).ready(function() {
 				var isGoIdentify = confirm("注册成功，是否前往验证身份？");
 				if(isGoIdentify) {
 					self.location = 'identify.html';
-				}else{
+				} else {
 					self.location = 'login.html';
-					
+
 				}
 				//						}
 				//					}, "json");

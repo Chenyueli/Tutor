@@ -25,8 +25,8 @@ function validateImg(fileElement) {
 		}
 	}
 };
-
 $(document).ready(function() {
+	console.log("role:" + testLogIn());
 	var $teacherInfor = $(".teacher-Info").eq(0),
 		$uPanel = $(".userPanel").eq(0);
 
@@ -50,6 +50,26 @@ $(document).ready(function() {
 		}
 	};
 
+	//检测登录
+	function testLogIn() {
+		var role = "";
+		console.log("role"+role);
+		role = decodeURI(window.location.href).split("?")[1];
+		console.log(role);
+		if(role !== undefined) {
+			$("header .user-center").text("切换用户");
+			if(role == "学生") {
+				$("header .pub-requirement").removeClass("hidden");
+			} else {
+				$("header .go-identify").removeClass("hidden");
+			};
+		} else {
+			console.log("未登录");
+			role = "";
+		}
+		return role;
+	}
+
 	function uPanelHidden() {
 		$uPanel.addClass("hidden");
 		$(document).unbind('click', uPanelHidden);
@@ -57,7 +77,7 @@ $(document).ready(function() {
 
 	(function init() {
 		var $goIdentify = $(".go-identify").eq(0),
-			$pubReq = $(".pub-requirement");
+			$pubReq = $(".pub-requirement"),
 			$uCenter = $(".user-center").eq(0),
 			$gotDetai = $(".go-tutorDetail").eq(0),
 			$goBack = $(".goBack").eq(0),
@@ -68,11 +88,13 @@ $(document).ready(function() {
 			$reserve = $(".reserve").eq(0),
 			$subReserve = $(".submit-reserve");
 
+		var role = testLogIn();
+		console.log("role:" + role);
+
 		//交互优化
 		$("input").focus(function() {
 			this.select();
 		});
-
 
 		//必要事件绑定	
 		//用户页面    隐藏/显示 
@@ -84,7 +106,16 @@ $(document).ready(function() {
 			} else {
 				$(".userPanel").addClass("hidden");
 				console.log(e.target);
-			}
+			};
+			//			if($target.hasClass("goBack")) {
+			//				if($(".home-content").length === 0) {
+			//					history.go(-1);
+			//				} else {
+			//					//返回首頁
+			//					$("#tutoring-Info,nav").removeClass("hidden");
+			//					$("#tutoring-detail,.goBack").addClass("hidden");
+			//				}
+			//			}
 		});
 		//	$uPanel.click(function() {
 		//		alert("hei");
@@ -95,18 +126,19 @@ $(document).ready(function() {
 		//		}
 		//
 		//	});
-		
-		$goIdentify.click(function() {
-			window.location = "identify.html";
+
+		$goIdentify.click(function(e) {
+			window.location = "identify.html?" + testLogIn();
+
 		});
 		$uCenter.click(function() {
-			window.location = "login.html";
+			window.location = "login.html?" + testLogIn();
 		});
-		$pubReq.click(function(){
-			window.location = "pubRequirement.html";
+		$pubReq.click(function() {
+			window.location = "pubRequirement.html?" + testLogIn();
 		})
 		$gotDetai.click(function() {
-			window.location = "tutorDetail.html";
+			window.location = "tutorDetail.html?" + testLogIn();
 		});
 		$goBack.click(function() {
 			if($(".home-content").length === 0) {

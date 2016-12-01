@@ -35,11 +35,13 @@ header {
         position: fixed;
         width: 50px;
         left: 10px; //      right: 10px; //      .tb;
+        font-family:"SimHei"
     }
     & > h2 {
         //      font-family: "Microsoft YaHei ";
         font-family: "SimHei";
         text-align: center;
+        font-weight: 400;
     }
 }
 .fa-user {
@@ -60,6 +62,15 @@ header {
     text-align: center;
     line-height: 28px;
     border-radius: 5px;
+    p {
+        font-size: 14px;
+    }
+    a{
+        text-decoration: none;
+        color:@bgColor;
+        display: block;
+        font-size:14px;
+    }
 }
 nav {
     position: fixed;
@@ -84,6 +95,8 @@ nav {
         display: inline-block;
         padding: 0 20px;
         border-radius: 8px;
+        height: 32px;
+        line-height: 32px;
     }
 }
 .active {
@@ -122,7 +135,8 @@ nav {
     flex: 3;
     line-height: 24px; //  position:relative;
     .sexuality {
-        color: #FEA531;
+        color: #EEB4B4;
+        color: #87CEFA;
         font-size: 10px;
     }
     .tPay {
@@ -154,7 +168,7 @@ nav {
 }
 #tutoring-Info {
     //  overflow: hidden;
-    margin: 8px auto 0;
+    margin: 16px auto 0;
 }
 .in-tutoring-Info {
     background-color: @bgColor;
@@ -168,7 +182,7 @@ nav {
     display: flex;
     justify-content: space-around;
     height: 20px; //  .tb;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     text-align: center;
     p[name= "address"] {
         //     .tb;
@@ -179,19 +193,12 @@ nav {
     }
 }
 .footer-wrapper {
-    //  .tb;
     position: fixed;
     width: 100%;
-    bottom: 40px;
+    height: 30px;
+    bottom: 10px;
     text-align: center;
-    height: 50px; //  background-color: @bgColor;
-}
-.infooter-wrapper {
-    width: 97%;
-    height: 100%;
-    margin: 0 auto;
-    //  padding-top: 10px;    
-    //      .tb; 
+    
 }
 .more-tutor-info {
     margin-top: 20px;
@@ -209,11 +216,20 @@ nav {
     margin-top: @headHeight;
     .infoTitle {
         line-height: 30px;
-        padding: 0 10px;
+        padding: 10px 10px 5px;
     }
     .releaseTime {
         float: right;
         font-size: 14px;
+    }
+}
+#tutoring-detail,
+#reservation-Form {
+    .footer-wrapper {
+        bottom: 10px !important;
+        @media screen and (min-width: 370px) {
+            bottom: 20px !important;
+        }
     }
 }
 .infoItem {
@@ -234,12 +250,13 @@ nav {
     }
 }
 .reserve {
-    font-size: 20px !important;
+    font-size: 18px !important;
     background-color: #406C5F;
-    padding: 5px 20px;
+    padding: 0 18px;
     color: #fff;
     border-radius: 5px;
-    margin-bottom: -10px;
+    font-family: "SimHei";
+    line-height: 30px;
 }
 .submit-reserve:extend(.reserve){}
 .in-reservation-Form {
@@ -247,17 +264,17 @@ nav {
     padding: 20px;
     .tutorInfoID {}
     & >.description {
-        height: 440px; //      .tb;
+        height: 420px; //      .tb;
         @media screen and (min-width: 370px) {
-            height: 540px;
+            height: 500px;
         }
         background-color: @bgColor;
         margin-top: 10px;
         padding: 5px;
         text-indent: 2em;
     }
-    p{
-        line-height: px;
+    p {
+        line-height: 24px;
     }
     textarea {
         border: 2px solid #78D9BD;
@@ -275,6 +292,9 @@ nav {
     & > section {
         width: 100%;
         margin-top: 5px;
+    }
+    .footer-wrapper{
+        bottom:30px;
     }
 }
 .img-info {
@@ -363,9 +383,12 @@ p[name = "remainder"] {
     font-size: 14px !important;
     padding: 5px 16px !important;
     border-radius: 12px !important;
-    width: 100% !important;
+    width: 90% !important;
+//  margin:0 20px;
     line-height: 30px !important;
     color: #fff !important;
+    font-family: simhei;
+    font-weight: 300;
 }
 /*----------page 3 -----------Register-----------------*/
 .mask {
@@ -407,7 +430,7 @@ p[name = "remainder"] {
         border-radius: 5px;
     }
     .active {
-        background-color: #FCBDB4;
+        background-color: #76EEC6;
     }
     button {
         width: 100px;
@@ -463,6 +486,12 @@ p[name = "remainder"] {
     input[name="pwd"] {
         margin-top: 50px !important;
     }
+    .warning {
+        font-size: 10px;
+        color: #CD6839;
+        margin-top: -10px;
+        margin-left: 10%;
+    }
     .tips {
         font-size: 10px;
         color: red;
@@ -503,14 +532,14 @@ p[name = "remainder"] {
     position: relative;
     top: @headHeight;
     background-color: @bgColor;
-    padding: 30px;
+    padding: 28px;
     margin: 20px;
     p {
         margin-bottom: 30px;
         font-size: 14px;
         span {
-//          color: #0000FF;
-            font-weight:600 ;
+            //          color: #0000FF;
+            //          font-weight:600 ;
         }
     }
     input {
@@ -520,6 +549,8 @@ p[name = "remainder"] {
         width: 100%; //      line-height: 30px;
         border-radius: 5px;
         padding: 16px;
+        font-family: "SimHei";
+        font-weight: 400;
     }
     button {
         background-color: #3E6C5F;
@@ -531,11 +562,14 @@ p[name = "remainder"] {
         display: block;
         margin-left: auto;
         margin-right: auto;
+        font-family: "SimHei";
+        font-weight: 400;
+        
     }
     @media screen and (min-width: 370px) {
         padding-bottom: 120px;
     }
-    .tips{
-        color:red;
+    .tips {
+        color: red;
     }
 }
